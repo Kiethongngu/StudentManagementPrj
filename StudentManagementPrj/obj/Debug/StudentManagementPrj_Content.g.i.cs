@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourcexaml/colors.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourcexaml/mainresouce.xml")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resourcexaml/styles.xml")]
 
 
