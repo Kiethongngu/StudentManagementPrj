@@ -1,0 +1,16 @@
+E:\StudentManagementPrj\StudentManagementPrj\bin\Debug\StudentManagementPrj.exe.config
+E:\StudentManagementPrj\StudentManagementPrj\bin\Debug\StudentManagementPrj.exe
+E:\StudentManagementPrj\StudentManagementPrj\bin\Debug\StudentManagementPrj.pdb
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj.csproj.AssemblyReference.cache
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj.csproj.SuggestedBindingRedirects.cache
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\MainWindow.g.cs
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\App.g.cs
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj_MarkupCompile.cache
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj_MarkupCompile.lref
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\MainWindow.baml
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj.g.resources
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj.Properties.Resources.resources
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj.csproj.GenerateResource.cache
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj.csproj.CoreCompileInputs.cache
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj.exe
+E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\StudentManagementPrj.pdb
