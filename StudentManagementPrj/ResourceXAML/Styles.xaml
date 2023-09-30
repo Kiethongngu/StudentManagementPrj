@@ -1,0 +1,1449 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+>
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="Input" TargetType="TextBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border
+                        BorderThickness="1"
+                        BorderBrush="{DynamicResource Yale Blue}"
+                        CornerRadius="10">
+                        <TextBox 
+                            Background="Transparent" 
+                            BorderThickness="0"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="24"
+                            Padding="10 0 0 0"
+                            />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CbxLong" TargetType="ComboBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ComboBox Width="245" 
+                                    Height="53"
+                                     FontSize="20"
+                                  BorderBrush="{StaticResource Yale Blue}"
+                                      Foreground="{StaticResource Yale Blue}"                   
+                                  Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                                Padding="5,0,5,0" VerticalContentAlignment="Center">
+
+                    </ComboBox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CbxGender" TargetType="ComboBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ComboBox SelectedIndex="0"  HorizontalAlignment="Left"
+                        Width="139" Margin="10 0" Height="39" Padding="15 0"
+                                     FontSize="16"
+                                  BorderBrush="{DynamicResource Yale Blue}"
+                                        Foreground="{DynamicResource Yale Blue}"                            
+                                  Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                                VerticalContentAlignment="Center">
+                        <ComboBoxItem Content="Tất cả"/>
+                        <ComboBoxItem Content="Nam"/>
+                        <ComboBoxItem Content="Nữ"/>
+                    </ComboBox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CbxSemester" TargetType="ComboBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ComboBox x:Name="cbb_Semester" SelectedIndex="0"  HorizontalAlignment="Left"
+                        Width="139" Margin="10 0" Height="39" Padding="15 0"
+                                     FontSize="16"
+                                  BorderBrush="{DynamicResource Yale Blue}"
+                                        Foreground="{DynamicResource Yale Blue}"                            
+                                  Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                                VerticalContentAlignment="Center">
+                        <ComboBoxItem Content="Cả năm"/>
+                        <ComboBoxItem Content="Học kì 1"/>
+                        <ComboBoxItem Content="Học kì 2"/>
+                    </ComboBox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CbxSubject" TargetType="ComboBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ComboBox SelectedIndex="0"  HorizontalAlignment="Left"
+                        Width="139" Margin="10 0" Height="39" Padding="15 0"
+                                     FontSize="16"
+                                  BorderBrush="{DynamicResource Yale Blue}"
+                              Background="{DynamicResource White}"
+                                        Foreground="{DynamicResource Yale Blue}"                            
+                                  Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                                VerticalContentAlignment="Center" >
+
+                        <ComboBoxItem Content="Tổng kết"/>
+                        <ComboBoxItem Content="Toán"/>
+                        <ComboBoxItem Content="Vật lý"/>
+                        <ComboBoxItem Content="Hóa học"/>
+                        <ComboBoxItem Content="Sinh học"/>
+                        <ComboBoxItem Content="Tiếng Anh"/>
+                        <ComboBoxItem Content="Lịch sử"/>
+                        <ComboBoxItem Content="Địa lý"/>
+                        <ComboBoxItem Content="Ngữ văn"/>
+                        <ComboBoxItem Content="Công nghệ"/>
+                        <ComboBoxItem Content="GDCD"/>
+                        <ComboBoxItem Content="Tin học"/>
+                        <ComboBoxItem Content="GDQP"/>
+                        <ComboBoxItem Content="Thể dục"/>
+                    </ComboBox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SearchBox" TargetType="TextBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <StackPanel Margin="10 0" 
+                              Orientation="Horizontal"
+                              materialDesign:RippleAssist.IsCentered="True">
+
+                        <Border CornerRadius="5" Width="295" Height="39" BorderThickness="1" BorderBrush="{DynamicResource Yale Blue}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                      Width="*" />
+                                    <ColumnDefinition
+                                      Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox            Padding="15 0"
+                                                    Foreground="{DynamicResource Yale Blue}"
+                                                    FontSize="16" materialDesign:HintAssist.Hint="Tìm kiếm tên"
+                                    Grid.Column="0"
+                                    Margin="8 0 0 0"
+                                    materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                    BorderThickness="0"
+                                    MinWidth="200"
+                                    VerticalAlignment="Center" />
+                                <Button
+                                    Style="{StaticResource MaterialDesignToolButton}"
+                                    Grid.Column="1">
+                                    <materialDesign:PackIcon
+                                                        Width="50"
+                                                        Height="30"
+                                                        Foreground="{DynamicResource Yale Blue}"
+                                      Kind="Search"
+                                      Opacity=".56"
+                                       />
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DatePicker" TargetType="DatePicker">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <DatePicker
+                              BorderBrush="{StaticResource Yale Blue}"
+                               Foreground="{StaticResource Green Blue}"
+                                FontSize="36"
+                                Padding="10 0 20 0"
+                              BorderThickness="1"
+                              Height="63"
+                              Width="417"
+                              Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+                                />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CalendarStyle1" TargetType="{x:Type Calendar}">
+        <Setter Property="Background" Value="white">
+            <!--<Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#1368AA" Offset="0"/>
+                    <GradientStop Color="#4091C9" Offset="0.16"/>
+                    <GradientStop Color="#9DCEE2" Offset="0.16"/>
+                    <GradientStop Color="#9DCEE2" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>-->
+        </Setter>
+        <!--<Setter Property="BorderBrush" Value="{DynamicResource Celestial Blue}">
+            -->
+        <!--<Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>-->
+        <!--
+        </Setter>-->
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Calendar}">
+                    <StackPanel x:Name="PART_Root" HorizontalAlignment="Center">
+                        <CalendarItem x:Name="PART_CalendarItem" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Style="{TemplateBinding CalendarItemStyle}"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginBtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{DynamicResource Celestial Blue}" CornerRadius="7">
+                        <TextBlock Text="Đăng nhập" Foreground="{DynamicResource White}" FontSize="25" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ResetPWBtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{DynamicResource Celestial Blue}" CornerRadius="7">
+                        <TextBlock Text="Cập nhật mật khẩu" Foreground="{DynamicResource White}" FontSize="25" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GetScoreBtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="{DynamicResource Celestial Blue}" CornerRadius="7">
+                            <Grid>
+                                <TextBlock Text="NHẬP ĐIỂM" Foreground="{DynamicResource White}" FontSize="24" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <Image Source="./imgs/getScoreIcon.png" Width="20" Height="20" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SaveBtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{DynamicResource Celestial Blue}" CornerRadius="7" Height="45" Width="150" Padding="0">
+                        <Button FontWeight="SemiBold" Content="Lưu" Foreground="{DynamicResource White}" FontSize="18"  VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="brd_SaveBtn" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{DynamicResource Celestial Blue}"/>
+        <Setter Property="CornerRadius" Value="7"/>
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="Width" Value="139"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+    <Style x:Key="SaveBtn3" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Content" Value="Lưu"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="brd_BackBtn" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{DynamicResource Tomato}"/>
+        <Setter Property="CornerRadius" Value="7"/>
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="Width" Value="139"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+    <Style x:Key="BackBtn3" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Content" Value="Quay lại"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <Style x:Key="SaveBtn2" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{DynamicResource Celestial Blue}" CornerRadius="7" Height="30" Width="100" Padding="0">
+                        <Button Content="Lưu" Foreground="{DynamicResource White}" FontSize="18" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BackBtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{DynamicResource Tomato}" CornerRadius="7" Height="45" Width="140" Padding="0">
+                        <Button FontWeight="SemiBold" Content="Quay lại" Foreground="{DynamicResource White}" FontSize="18"  VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BackBtn2" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{DynamicResource Tomato}" CornerRadius="7" Height="30" Width="100" Padding="0">
+                        <Button Content="Quay lại" Foreground="{DynamicResource White}" FontSize="18" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditBtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Margin="10 0" Height="45" Width="45" Background="{DynamicResource Green Blue}" CornerRadius="7">
+                        <Image Source="../imgs/editIcon.png" Height="20" Width="20"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditBtn2" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{DynamicResource Green Blue}" CornerRadius="7">
+                        <Image Source="../imgs/editIcon.png" Margin="5 5 5 5"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DeleteBtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Height="45" Width="45"  Background="{DynamicResource Tomato}" CornerRadius="7">
+                        <Image Source="../imgs/trash.png" Height="25" Width="25"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PrintBtn" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Height="45" Width="45" Background="#40C9C9" CornerRadius="7">
+                        <Image Source="../imgs/printer.png" Height="30" Width="30"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="tbx_InputScore" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <!--<Style x:Key="tbx_InputScore" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border BorderBrush="{DynamicResource Green Blue}" Height="25" Width="25" BorderThickness="1" CornerRadius="2" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBox materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" Foreground="{DynamicResource Green Blue}" CaretBrush="{DynamicResource Green Blue}" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" Text="{TemplateBinding Text}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <!--<Style x:Key="tbx_Achievement" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border BorderBrush="{DynamicResource Green Blue}" BorderThickness="1"  Margin="10 5 0 0" CornerRadius="10" Padding="0" >
+                        <TextBox Text="{TemplateBinding Text}" Height="80"  materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0" CaretBrush="{DynamicResource Green Blue}" FontSize="14" Foreground="{DynamicResource Green Blue}" TextWrapping="WrapWithOverflow"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <Style x:Key="tbx_Achievement" TargetType="{x:Type TextBox}">
+        <Setter Property="Height" Value="80"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+    </Style>
+
+    <Style x:Key="brd_achievement" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Margin" Value="10 5 0 0"/>
+        <Setter Property="CornerRadius" Value="10 "/>
+        <Setter Property="Padding" Value="0 "/>
+        <Setter Property="Height" Value="90"/>
+    </Style>
+
+
+
+
+    <Style x:Key="CustomizeDtg" TargetType="{x:Type DataGrid}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGrid">
+                    <DataGrid Margin="0 10 0 0" IsReadOnly="True" AutoGenerateColumns="False" ColumnHeaderStyle="{DynamicResource dtg_Header1}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Width="1*" ElementStyle="{DynamicResource txtbl_ClassValue}" Header="Khối" Binding="{Binding Grade}"></DataGridTextColumn>
+
+                            <DataGridTemplateColumn CanUserReorder="False" CanUserResize="False" Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <GridSplitter BorderThickness="1" BorderBrush="{DynamicResource Green Blue}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Width="1*" ElementStyle="{DynamicResource txtbl_ClassValue}" Header="Lớp"  Binding="{Binding Class}"></DataGridTextColumn>
+
+                            <DataGridTemplateColumn CanUserReorder="False" CanUserResize="False"  Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <GridSplitter BorderThickness="1" BorderBrush="{DynamicResource Green Blue}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn CanUserReorder="False" CanUserResize="False" Width="1.5*" Header="Sỉ số">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Style="{DynamicResource txtbl_ClassValue}" Text="{Binding NumofAttendants}"></TextBlock>
+                                            <TextBlock Style="{DynamicResource txtbl_ClassValue1}" VerticalAlignment="Center" Margin="10 0 0 0">học sinh</TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn CanUserReorder="False" CanUserResize="False" Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <GridSplitter BorderThickness="1" BorderBrush="{DynamicResource Green Blue}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTextColumn CanUserReorder="False" CanUserResize="False" Width="2.5*" ElementStyle="{DynamicResource txtbl_ClassValue}" Header="GVCN"  Binding="{Binding Teacher}"></DataGridTextColumn>
+
+                            <DataGridTemplateColumn CanUserReorder="False" CanUserResize="False" Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content=">" Foreground="{DynamicResource Green Blue}" FontSize="25" Background="Transparent" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Transparent"></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="rdbtn_MenuStyle2" TargetType="RadioButton">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0 10 0 10"/>
+    </Style>
+
+    <Style x:Key="ic_MenuStyle" TargetType="materialDesign:PackIcon">
+        <Setter Property="Foreground" Value="{DynamicResource White}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="26"/>
+        <Setter Property="Height" Value="26"/>
+    </Style>
+
+    <Style x:Key="txtbl_MenuStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource White}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="24"/>
+    </Style>
+
+    <Style x:Key="rdbtn_MenuStyle"
+           TargetType="RadioButton">
+
+        <Setter Property="HorizontalAlignment"
+                Value="Center" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Height"
+                Value="65" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+
+                    <Border x:Name="border"
+                            Height="60"
+                            Width="220"
+                            BorderThickness="0"
+                            CornerRadius="27" 
+                            >
+
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BorderBackground"
+                                             Color="Transparent" />
+                        </Border.Background>
+
+                        <Grid Name="content_rd" HorizontalAlignment="Left">
+
+                            <!--<Border x:Name="Indicator"
+                                    Height="35"
+                                    Width="4"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Background="#FFFFFF"
+                                    Visibility="Collapsed"
+                                    CornerRadius="2" />-->
+
+                            <Border x:Name="borderCnt"
+                            Height="60"
+                            Width="200"
+                            BorderThickness="0"
+                            CornerRadius="27"
+                            Padding="20 0 0 0 ">
+                                <ContentPresenter Margin="10 0 0 0"/>
+                            </Border>
+
+
+                        </Grid>
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <!--<Trigger Property="IsMouseOver"
+                                 Value="True">
+
+                            <Setter Property="Visibility"
+                                    TargetName="Indicator"
+                                    Value="Visible" />
+
+                        </Trigger>-->
+
+                        <EventTrigger RoutedEvent="Border.MouseEnter"
+                                      SourceName="border">
+
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#033270"
+                                                    To="#044396"
+                                                    Duration="0:0:0.3" />
+                                </Storyboard>
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Border.MouseLeave"
+                                      SourceName="border">
+
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#044396"
+                                                    To="#033270"
+                                                    Duration="0:0:0.3" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#033270"
+                                                    To="Transparent"
+                                                    Duration="0:0:0.0" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+
+                            <Setter Property="Background"
+                                    TargetName="borderCnt"
+                                    Value="{DynamicResource Green Blue}"
+                                    />
+
+                            <Setter Property="Margin"
+                                    TargetName="content_rd"
+                                    Value="20 0 0 0"
+                                    />
+                            <!--<Setter Property="IsEnabled"
+                                    Value="False"/>-->
+
+                            <!--<Setter Property="Visibility"
+                                    TargetName="Indicator"
+                                    Value="Visible" />-->
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="txtbl_TilleTab" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Yale Blue}"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="txtbl_SchoolYear" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Yale Blue}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextDecorations" Value="Underline"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
+    </Style>
+
+    <Style x:Key="txtbl_Infovalue" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Yale Blue}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="txtbl_Infovalue2" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Yale Blue}"/>
+        <Setter Property="FontSize" Value="19"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <Style x:Key="dtg_Header" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="{DynamicResource Yale Blue}"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    <Style x:Key="dtg_Header2" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="{DynamicResource Yale Blue}"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="itm_Container" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="{DynamicResource Yale Blue}"/>
+        <Setter Property="FontSize" Value="100"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="txt_value" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="txt_value2" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="btn_edit" TargetType="Button">
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="35"/>
+
+    </Style>
+
+    <Style x:Key="btn_delete" TargetType="Button">
+        <Setter Property="Foreground" Value="{DynamicResource Engineering Orange}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value=" 5 0"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="btn_InputScore" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border  Height="45" Width="120" Background="{DynamicResource Celestial Blue}" CornerRadius="15">
+                        <Grid  Height="45" Width="120" >
+                            <TextBlock Foreground="White" FontWeight="SemiBold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">NHẬP ĐIỂM</TextBlock>
+                            <Image VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="17.5" Source="../imgs/iconInputScore.png"></Image>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+    <Style x:Key="txtbl_ClassValue" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+    <Style x:Key="txtbl_DtgTitle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <Style x:Key="txtbl_dtgHeader1" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontWeight" Value="Regular"/>
+        <Setter Property="Margin" Value="15 15 0 0"/>
+
+    </Style>
+    <Style x:Key="dtg_Header1" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="{DynamicResource Green Blue}"/>
+        <Setter Property="Background" Value="{DynamicResource White}"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <!--<Style x:Key="dtgRow_Style" TargetType="DataGridCell">
+        <Setter Property="Background" Value="Yellow"/>
+
+    </Style>-->
+    <Style x:Key="dtgRow_Style" TargetType="DataGridRow" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridRow}">
+                    <Border x:Name="borderDtg"
+                            BorderThickness="0"
+                            CornerRadius="10" Height="84" Margin="0 5" 
+                            >
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BorderDtgBackground"
+                                             Color="White" />
+                        </Border.Background>
+
+
+                        <Grid x:Name="gridDTG"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Style="{DynamicResource txtbl_dtgHeader1}" Text="KHỐI"></TextBlock>
+                                <TextBlock Style="{DynamicResource txtbl_ClassValue}" Text="{Binding Grade}"></TextBlock>
+                            </StackPanel>
+                            <GridSplitter IsEnabled="False" Grid.Column="0" BorderThickness="1" BorderBrush="{DynamicResource Green Blue}" Height="60" />
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Style="{DynamicResource txtbl_dtgHeader1}" Text="LỚP"></TextBlock>
+                                <TextBlock Style="{DynamicResource txtbl_ClassValue}" Text="{Binding Class}"></TextBlock>
+                            </StackPanel>
+                            <GridSplitter IsEnabled="False" Grid.Column="1" BorderThickness="1" BorderBrush="{DynamicResource Green Blue}" Height="60" />
+                            <StackPanel Grid.Column="2">
+                                <TextBlock Style="{DynamicResource txtbl_dtgHeader1}" Text="SỈ SỐ"></TextBlock>
+                                <TextBlock Style="{DynamicResource txtbl_ClassValue}" Text="{Binding NumofAttendants}"></TextBlock>
+                            </StackPanel>
+                            <GridSplitter IsEnabled="False" Grid.Column="2" BorderThickness="1" BorderBrush="{DynamicResource Green Blue}" Height="60" />
+
+                            <StackPanel Grid.Column="3">
+                                <TextBlock Style="{DynamicResource txtbl_dtgHeader1}" Text="GNCN"></TextBlock>
+                                <TextBlock Style="{DynamicResource txtbl_ClassValue}" Text="{Binding Teacher}"></TextBlock>
+                            </StackPanel>
+                            <Image Grid.Column="4" Height="16" Width="9" Source="D:\UIT\HK4\NMCNPM\DoAn\EduConnectApp\EduConnectApp\imgs\arrowright.png"></Image>
+                        </Grid>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding ElementName=ClassViewModel,Path=navClassListUC}" ></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+
+                    </Border>
+
+                    <!--<ControlTemplate.Triggers>
+
+                        <EventTrigger RoutedEvent="Button.MouseEnter"
+                                      SourceName="btn_Dtg">
+
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderDtgBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#033270"
+                                                    To="#044396"
+                                                    Duration="0:0:0.3" />
+                                </Storyboard>
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Button.MouseLeave"
+                                      SourceName="btn_Dtg">
+
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderDtgBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#044396"
+                                                    To="#033270"
+                                                    Duration="0:0:0.3" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderDtgBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#033270"
+                                                    To="Transparent"
+                                                    Duration="0:0:0.0" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        -->
+                    <!--<Trigger Property="Click"
+                                 Value="True">
+
+                            <Setter Property="Background"
+                                    TargetName="borderCnt"
+                                    Value="{DynamicResource Green Blue}"
+                                    />
+
+                            <Setter Property="Margin"
+                                    TargetName="content_rd"
+                                    Value="20 0 0 0"
+                                    />
+                            <Setter Property="IsEnabled"
+                                    Value="False"/>
+
+                            -->
+                    <!--<Setter Property="Visibility"
+                                    TargetName="Indicator"
+                                    Value="Visible" />-->
+                    <!--
+
+                        </Trigger>-->
+                    <!--
+
+                    </ControlTemplate.Triggers>-->
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+
+    <Style x:Key="MemberCard1" TargetType="ListBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid Height="190" Width="Auto" >
+                        <!--<TextBlock Text="{Binding Name}"/>-->
+                        <StackPanel Orientation="Horizontal" >
+                            <Grid>
+                                <Border 
+            CornerRadius="7">
+                                    <StackPanel
+            Background="#C5E9F8"
+            Height="145">
+                                        <Border
+                CornerRadius="0 0 7 7"
+                Background="{DynamicResource Green Blue}"
+                Height="29"
+                VerticalAlignment="Top">
+                                            <DockPanel
+                        >
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                    <Ellipse
+                            Width="22"
+                            Height="22"
+                            >
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush ImageSource="../imgs/LogoUIT_Whitebg.png"/>
+
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+
+                                                    <StackPanel Margin="5 5 5 0">
+                                                        <TextBlock
+                                    Foreground="{DynamicResource White}"
+                                    TextAlignment="Center"
+                                    FontSize="8">
+                                    SỞ GIÁO DỤC VÀ ĐÀO TẠO TIỀN GIANG
+                                                        </TextBlock>
+                                                        <TextBlock
+                                    Foreground="{DynamicResource White}"
+                                    TextAlignment="Center"
+                                    FontSize="8">
+                                    TRƯỜNG THPT ĐỐC BINH KIỀU
+                                                        </TextBlock>
+                                                    </StackPanel>
+
+                                                </StackPanel>
+
+                                            </DockPanel>
+
+                                        </Border>
+                                        <Border
+                Background="#C5E9F8"
+                Height="101"
+                VerticalAlignment="Center">
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition Width="33.706"></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <DockPanel
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.RowSpan="8"
+                            Grid.ColumnSpan="5">
+                                                    <Ellipse
+                                Width="75"
+                                Height="75"
+                                VerticalAlignment="Center"
+                            >
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush ImageSource="{Binding Ava}"/>
+
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                </DockPanel>
+
+                                                <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Họ và tên:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Chức vụ:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Tổ:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Số điện thoại:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Email:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Địa chỉ:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+                                                <!--Thong tin-->
+
+                                                <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding Name}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding Role}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding Department}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding PhoneNum}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding Email}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Grid.RowSpan="2"
+                            Text="{Binding Address}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light"
+                            TextWrapping="WrapWithOverflow">
+                                                </TextBlock>
+                                            </Grid>
+
+                                        </Border>
+                                        <Border
+                CornerRadius="7 7 0 0"
+                Background="{DynamicResource Green Blue}"
+                Height="15"
+                VerticalAlignment="Bottom">
+                                            <TextBlock 
+                        Text="Đường Thanh Tâm, Khu 1, Phường 4, thị xã Cai Lậy, Tiền Giang"
+                        Foreground="{DynamicResource White}"
+                        TextAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="7"
+                        >
+
+                                            </TextBlock>
+                                        </Border>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                            <Grid Width="70" Background="Transparent"></Grid>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="MemberCard" TargetType="DataGridCell">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid Height="190" Width="400" >
+                        <!--<TextBlock Text="{Binding Name}"/>-->
+                        <StackPanel Orientation="Horizontal" >
+                            <Grid>
+                                <Border 
+            CornerRadius="7">
+                                    <StackPanel
+            Background="#C5E9F8"
+            Height="145">
+                                        <Border
+                CornerRadius="0 0 7 7"
+                Background="{DynamicResource Green Blue}"
+                Height="29"
+                VerticalAlignment="Top">
+                                            <DockPanel
+                        >
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                    <Ellipse
+                            Width="22"
+                            Height="22"
+                            >
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush ImageSource="../imgs/LogoUIT_Whitebg.png"/>
+
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+
+                                                    <StackPanel Margin="5 5 5 0">
+                                                        <TextBlock
+                                    Foreground="{DynamicResource White}"
+                                    TextAlignment="Center"
+                                    FontSize="8">
+                                    SỞ GIÁO DỤC VÀ ĐÀO TẠO TIỀN GIANG
+                                                        </TextBlock>
+                                                        <TextBlock
+                                    Foreground="{DynamicResource White}"
+                                    TextAlignment="Center"
+                                    FontSize="8">
+                                    TRƯỜNG THPT ĐỐC BINH KIỀU
+                                                        </TextBlock>
+                                                    </StackPanel>
+
+                                                </StackPanel>
+
+                                            </DockPanel>
+
+                                        </Border>
+                                        <Border
+                Background="#C5E9F8"
+                Height="101"
+                VerticalAlignment="Center">
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                    <RowDefinition></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition Width="33.706"></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <DockPanel
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.RowSpan="8"
+                            Grid.ColumnSpan="5">
+                                                    <Ellipse
+                                Width="75"
+                                Height="75"
+                                VerticalAlignment="Center"
+                            >
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush ImageSource="{Binding Ava}"/>
+
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                </DockPanel>
+
+                                                <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Họ và tên:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Chức vụ:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Tổ:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Số điện thoại:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Email:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+
+                                                <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="6"
+                            Grid.ColumnSpan="4"
+                            Text="Địa chỉ:"
+                            Foreground="{DynamicResource Yale Blue}"
+                            FontSize="8"
+                            FontWeight="DemiBold">
+                                                </TextBlock>
+
+                                                <!--Thong tin-->
+
+                                                <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding Name}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding Role}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding Department}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding PhoneNum}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Text="{Binding Email}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light">
+                                                </TextBlock>
+
+                                                <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="10"
+                            Grid.ColumnSpan="7"
+                            Grid.RowSpan="2"
+                            Text="{Binding Address}"
+                            Foreground="{DynamicResource Green Blue}"
+                            FontSize="8"
+                            FontWeight="Light"
+                            TextWrapping="WrapWithOverflow">
+                                                </TextBlock>
+                                            </Grid>
+
+                                        </Border>
+                                        <Border
+                CornerRadius="7 7 0 0"
+                Background="{DynamicResource Green Blue}"
+                Height="15"
+                VerticalAlignment="Bottom">
+                                            <TextBlock 
+                        Text="Đường Thanh Tâm, Khu 1, Phường 4, thị xã Cai Lậy, Tiền Giang"
+                        Foreground="{DynamicResource White}"
+                        TextAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="7"
+                        >
+
+                                            </TextBlock>
+                                        </Border>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                            <Grid Width="70" Background="Transparent"></Grid>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+</ResourceDictionary>
+
+
+
+
+

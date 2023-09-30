@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\StudentManagementPrj\StudentManagementPrj\obj\Debug\
+D:\StudentManagement-App\StudentManagementPrj\obj\Debug\
 StudentManagementPrj
 none
 false
 DEBUG;TRACE
-E:\StudentManagementPrj\StudentManagementPrj\App.xaml
-1219584333
+D:\StudentManagement-App\StudentManagementPrj\App.xaml
+549565796
 
-111172694039
-13-1310406943
-MainWindow.xaml;
+12-591449889
+191055700672
+MainWindow.xaml;ResourceXAML\Colors.xaml;ResourceXAML\MainResource.xaml;ResourceXAML\Styles.xaml;View\StatisticView.xaml;
 
 False
 
