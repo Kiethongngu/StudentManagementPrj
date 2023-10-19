@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace StudentManagementPrj.View
+namespace StudentManagementPrj.ViewUCs
 {
     /// <summary>
-    /// Interaction logic for StatisticView.xaml
+    /// Interaction logic for ContactViewUC.xaml
     /// </summary>
-    public partial class StatisticView : Page
+    public partial class ContactViewUC : UserControl
     {
-        public StatisticView()
+        public ContactViewUC()
         {
             InitializeComponent();
         }

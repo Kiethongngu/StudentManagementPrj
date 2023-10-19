@@ -79,22 +79,16 @@
     <Compile Include="Commands\NavigationCommand.cs" />
     <Compile Include="Service\NavigationService.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="View\ContactView.xaml.cs">
-      <DependentUpon>ContactView.xaml</DependentUpon>
+    <Compile Include="ViewModel\ContactViewModel.cs" />
+    <Compile Include="ViewModel\StatisticViewModel.cs" />
+    <Compile Include="ViewUCs\ContactViewUC.xaml.cs">
+      <DependentUpon>ContactViewUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\StatisticView.xaml.cs">
-      <DependentUpon>StatisticView.xaml</DependentUpon>
+    <Compile Include="ViewUCs\StatisticViewUC.xaml.cs">
+      <DependentUpon>StatisticViewUC.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ResourceXAML\Colors.xaml">
@@ -109,11 +103,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ContactView.xaml">
+    <Page Include="ViewUCs\ContactViewUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\StatisticView.xaml">
+    <Page Include="ViewUCs\StatisticViewUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
