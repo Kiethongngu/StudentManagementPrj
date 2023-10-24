@@ -79,6 +79,9 @@
     <Compile Include="Commands\NavigationCommand.cs" />
     <Compile Include="Service\NavigationService.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewUCs\ClassListUC.xaml.cs">
+      <DependentUpon>ClassListUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewUCs\ClassUC.xaml.cs">
       <DependentUpon>ClassUC.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResourceXAML\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\ClassListUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
