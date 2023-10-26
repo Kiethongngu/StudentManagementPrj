@@ -88,6 +88,15 @@
     <Compile Include="ViewUCs\ContactViewUC.xaml.cs">
       <DependentUpon>ContactViewUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewUCs\EditScore.xaml.cs">
+      <DependentUpon>EditScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\InputScore.xaml.cs">
+      <DependentUpon>InputScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\ScoreDetail.xaml.cs">
+      <DependentUpon>ScoreDetail.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewUCs\StatisticViewUC.xaml.cs">
       <DependentUpon>StatisticViewUC.xaml</DependentUpon>
     </Compile>
@@ -126,6 +135,18 @@
     <Page Include="ViewUCs\ContactViewUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewUCs\EditScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\InputScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\ScoreDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\StatisticViewUC.xaml">
       <Generator>MSBuild:Compile</Generator>
