@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentManagementPrj"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:uc="clr-namespace:StudentManagementPrj.UserControlCustom"
         xmlns:viewuc="clr-namespace:StudentManagementPrj.ViewUCs"
         mc:Ignorable="d"
         Height="720" Width="1280"
