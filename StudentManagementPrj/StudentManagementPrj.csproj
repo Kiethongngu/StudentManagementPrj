@@ -77,18 +77,52 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\NavigationCommand.cs" />
+    <Compile Include="LoadingWindow.xaml.cs">
+      <DependentUpon>LoadingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service\NavigationService.cs" />
+    <Compile Include="UserControlCustom\ControlBarUC.xaml.cs">
+      <DependentUpon>ControlBarUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCustom\MemberCard.xaml.cs">
+      <DependentUpon>MemberCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\ContactViewModel.cs" />
-    <Compile Include="ViewModel\StatisticViewModel.cs" />
+    <Compile Include="ViewUCs\ClassListUC.xaml.cs">
+      <DependentUpon>ClassListUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\ClassUC.xaml.cs">
+      <DependentUpon>ClassUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewUCs\ContactViewUC.xaml.cs">
       <DependentUpon>ContactViewUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\EditScore.xaml.cs">
+      <DependentUpon>EditScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\InputScore.xaml.cs">
+      <DependentUpon>InputScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\ScoreDetail.xaml.cs">
+      <DependentUpon>ScoreDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUCs\StatisticViewUC.xaml.cs">
       <DependentUpon>StatisticViewUC.xaml</DependentUpon>
     </Compile>
+    <Page Include="LoadingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ResourceXAML\Colors.xaml">
@@ -103,13 +137,41 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlCustom\ControlBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlCustom\MemberCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\ClassListUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\ClassUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewUCs\ContactViewUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewUCs\EditScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\InputScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\ScoreDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\StatisticViewUC.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
