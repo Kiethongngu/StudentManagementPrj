@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentManagementPrj.UCViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace StudentManagementPrj.UserControlCustom
     /// </summary>
     public partial class ControlBarUC : UserControl
     {
+        public ControlBarViewModel ViewModel { get; set; }
+
         public ControlBarUC()
         {
             InitializeComponent();
+            this.DataContext = ViewModel = new ControlBarViewModel();
+
         }
     }
 }
