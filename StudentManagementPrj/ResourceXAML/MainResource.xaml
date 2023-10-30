@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:vm="clr-namespace:StudentManagementPrj.ViewModel"
                     xmlns:ucvm="clr-namespace:StudentManagementPrj.UCViewModel"
-                    xmlns:local="clr-namespace:StudentManagementPrj.ResourceXAML"> <!--UCViewModel này chưa có, lúc sau code mới có, nên tạm thời cứ để đây lúc sau khỏi chỉnh-->
+                    xmlns:local="clr-namespace:StudentManagementPrj.ResourceXAML">
+    <!--UCViewModel này chưa có, lúc sau code mới có, nên tạm thời cứ để đây lúc sau khỏi chỉnh-->
 
     <!--<vm:MainViewModel x:Key="MainVM"></vm:MainViewModel>
     <vm:LoginViewModel x:Key="LoginVM"></vm:LoginViewModel>
