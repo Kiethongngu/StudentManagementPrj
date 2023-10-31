@@ -109,6 +109,18 @@
     <Compile Include="ViewUCs\StatisticViewUC.xaml.cs">
       <DependentUpon>StatisticViewUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewUCs\StudentPro5.xaml.cs">
+      <DependentUpon>StudentPro5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\StudentPro5Edit.xaml.cs">
+      <DependentUpon>StudentPro5Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\TeacherPro5.xaml.cs">
+      <DependentUpon>TeacherPro5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\TeacherPro5Edit.xaml.cs">
+      <DependentUpon>TeacherPro5Edit.xaml</DependentUpon>
+    </Compile>
     <Page Include="LoadingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +184,22 @@
     <Page Include="ViewUCs\StatisticViewUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewUCs\StudentPro5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\StudentPro5Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\TeacherPro5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\TeacherPro5Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
