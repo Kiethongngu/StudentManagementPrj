@@ -56,6 +56,7 @@
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,18 +78,68 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\NavigationCommand.cs" />
+    <Compile Include="LoadingWindow.xaml.cs">
+      <DependentUpon>LoadingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service\NavigationService.cs" />
+    <Compile Include="Store\NavigationStore.cs" />
+    <Compile Include="UCViewModel\ControlBarViewModel.cs" />
+    <Compile Include="UserControlCustom\ControlBarUC.xaml.cs">
+      <DependentUpon>ControlBarUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCustom\MemberCard.xaml.cs">
+      <DependentUpon>MemberCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\ContactViewModel.cs" />
-    <Compile Include="ViewModel\StatisticViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewUCs\ClassListUC.xaml.cs">
+      <DependentUpon>ClassListUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\ClassUC.xaml.cs">
+      <DependentUpon>ClassUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewUCs\ContactViewUC.xaml.cs">
       <DependentUpon>ContactViewUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\EditScore.xaml.cs">
+      <DependentUpon>EditScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\InputScore.xaml.cs">
+      <DependentUpon>InputScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\ScoreDetail.xaml.cs">
+      <DependentUpon>ScoreDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUCs\StatisticViewUC.xaml.cs">
       <DependentUpon>StatisticViewUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewUCs\StudentPro5.xaml.cs">
+      <DependentUpon>StudentPro5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\StudentPro5Edit.xaml.cs">
+      <DependentUpon>StudentPro5Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\TeacherPro5.xaml.cs">
+      <DependentUpon>TeacherPro5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\TeacherPro5Edit.xaml.cs">
+      <DependentUpon>TeacherPro5Edit.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LoadingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ResourceXAML\Colors.xaml">
@@ -103,11 +154,55 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlCustom\ControlBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlCustom\MemberCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\ClassListUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="ViewUCs\ClassUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewUCs\ContactViewUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewUCs\EditScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\InputScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\ScoreDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\StatisticViewUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewUCs\StudentPro5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\StudentPro5Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\TeacherPro5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\TeacherPro5Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,6 +236,52 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgs\arrowright.png" />
+    <Resource Include="imgs\avt1.png" />
+    <Resource Include="imgs\avt10.png" />
+    <Resource Include="imgs\avt11.png" />
+    <Resource Include="imgs\avt12.png" />
+    <Resource Include="imgs\avt13.png" />
+    <Resource Include="imgs\avt14.png" />
+    <Resource Include="imgs\avt15.png" />
+    <Resource Include="imgs\avt16.png" />
+    <Resource Include="imgs\avt2.png" />
+    <Resource Include="imgs\avt3.png" />
+    <Resource Include="imgs\avt4.png" />
+    <Resource Include="imgs\avt5.png" />
+    <Resource Include="imgs\avt6.png" />
+    <Resource Include="imgs\avt7.png" />
+    <Resource Include="imgs\avt8.png" />
+    <Resource Include="imgs\avt9.png" />
+    <Resource Include="imgs\avtusr.jpg" />
+    <Resource Include="imgs\BlueCircle.png" />
+    <Resource Include="imgs\BlurredBackground.png" />
+    <Resource Include="imgs\camera.png" />
+    <Resource Include="imgs\ClassImage.png" />
+    <Resource Include="imgs\editIcon.png" />
+    <Resource Include="imgs\getScoreIcon.png" />
+    <Resource Include="imgs\Graduation.png" />
+    <Resource Include="imgs\GreenBlueCircle.png" />
+    <Resource Include="imgs\iconInputScore.png" />
+    <Resource Include="imgs\imgScreenScore.png" />
+    <Resource Include="imgs\Infor.png" />
+    <Resource Include="imgs\Loading.png" />
+    <Resource Include="imgs\Logo.png" />
+    <Resource Include="imgs\LogoUIT.png" />
+    <Resource Include="imgs\LogoUIT_Whitebg.png" />
+    <Resource Include="imgs\printer.png" />
+    <Resource Include="imgs\pro5bg.png" />
+    <Resource Include="imgs\Pro5Title.png" />
+    <Resource Include="imgs\RainIcon.png" />
+    <Resource Include="imgs\RainingImage.png" />
+    <Resource Include="imgs\SchoolImage.png" />
+    <Resource Include="imgs\SemesterLine1.png" />
+    <Resource Include="imgs\SemesterLine2.png" />
+    <Resource Include="imgs\StatisticImg.png" />
+    <Resource Include="imgs\trash.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
