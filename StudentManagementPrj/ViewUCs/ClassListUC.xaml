@@ -43,7 +43,11 @@
                     <Border Style="{DynamicResource brd_SaveBtn}">
                         <Button Style="{DynamicResource SaveBtn3}"
                                 Content="Thêm hs" >
-
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding navAdd}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </Button>
                     </Border>
                     <ComboBox Name="cbxGender" SelectedIndex="0"  HorizontalAlignment="Left"
