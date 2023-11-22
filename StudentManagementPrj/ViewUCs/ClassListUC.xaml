@@ -31,22 +31,25 @@
                     <TextBlock Style="{DynamicResource txtbl_SchoolYear}" TextDecorations="None" Text="{Binding schoolYear}" Margin="0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Style="{DynamicReso<Border Style="{DynamicResource brd_SaveBtn}">
-                        <Button Style="{DynamicResource SaveBtn3}"
-                                Content="Thêm hs" >
-
-                        </Button>
-                    </Border>urce txtbl_SchoolYear}" TextDecorations="None" Text="GVCN: "/>
+                    <TextBlock Style="{DynamicResource txtbl_SchoolYear}" TextDecorations="None" Text="GVCN: "/>
                     <TextBlock Style="{DynamicResource txtbl_Infovalue}" FontSize="16"  Text="{Binding teacherName}"/>
                 </StackPanel>
-
             </StackPanel>
 
 
             <!--Cbb and Search-->
             <StackPanel HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1" >
                 <StackPanel  VerticalAlignment="Center" Orientation="Horizontal">
-                    
+                    <Border Style="{DynamicResource brd_SaveBtn}">
+                        <Button Style="{DynamicResource SaveBtn3}"
+                                Content="Thêm hs" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding navAdd}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                    </Border>
                     <ComboBox Name="cbxGender" SelectedIndex="0"  HorizontalAlignment="Left"
                         Width="139" Margin="10 0" Height="39" Padding="15 0"
                                      FontSize="16"

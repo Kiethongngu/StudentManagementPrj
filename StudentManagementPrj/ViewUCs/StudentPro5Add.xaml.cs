@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace StudentManagementPrj.ViewUCs
 {
     /// <summary>
-    /// Interaction logic for ClassListUC.xaml
+    /// Interaction logic for StudentPro5Add.xaml
     /// </summary>
-    public partial class ClassListUC : UserControl
+    public partial class StudentPro5Add : UserControl
     {
-        public ClassListUC()
+        public StudentPro5Add()
         {
             InitializeComponent();
-        }
-
-        private void Grid_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            Grid grid = sender as Grid;
-            ScrollViewer scv = grid.Parent as ScrollViewer;
-            scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
-            e.Handled = true;
         }
     }
 }
