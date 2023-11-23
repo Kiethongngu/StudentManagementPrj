@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:vm="clr-namespace:StudentManagementPrj.ViewModel"
-                    xmlns:ucvm="clr-namespace:StudentManagementPrj.UCViewModel"> <!--UCViewModel này chưa có, lúc sau code mới có, nên tạm thời cứ để đây lúc sau khỏi chỉnh-->
+                    xmlns:ucvm="clr-namespace:StudentManagementPrj.UCViewModel"
+                    xmlns:local="clr-namespace:StudentManagementPrj.ResourceXAML">
+    <!--UCViewModel này chưa có, lúc sau code mới có, nên tạm thời cứ để đây lúc sau khỏi chỉnh-->
 
     <!--<vm:MainViewModel x:Key="MainVM"></vm:MainViewModel>
     <vm:LoginViewModel x:Key="LoginVM"></vm:LoginViewModel>
@@ -17,4 +19,4 @@
     <vm:EditScoreViewModel x:Key="EditScoreVM"></vm:EditScoreViewModel>
     <vm:ExportPro5ViewModel x:Key="ExportPro5VM"></vm:ExportPro5ViewModel>
     <ucvm:MemberCardViewModel x:Key="MemberCardVM"></ucvm:MemberCardViewModel>-->
-    </ResourceDictionary>
+</ResourceDictionary>

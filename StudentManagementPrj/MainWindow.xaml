@@ -3,16 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:StudentManagementPrj"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-        xmlns:viewuc="clr-namespace:StudentManagementPrj.ViewUCs"
+        xmlns:uc="clr-namespace:StudentManagementPrj.UserControlCustom"
+        xmlns:viewuc ="clr-namespace:StudentManagementPrj.ViewUCs"
+        xmlns:local="clr-namespace:StudentManagementPrj"
+        xmlns:vm="clr-namespace:StudentManagementPrj.ViewModel"
         mc:Ignorable="d"
         Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         DataContext="MainViewModel"
         WindowStyle="None"
-        xmlns:vm="clr-namespace:StudentManagementPrj.ViewModel"
-        x:Name="mainWd">
+        x:Name="mainWd"
+        >
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedMainWd}" CommandParameter="{Binding ElementName=mainWd}"/>
@@ -72,7 +75,7 @@
                         </Ellipse>
                         <StackPanel Grid.Column="2" Margin="10 0">
                             <!--<TextBlock x:Name="Ten" Width="120" Text="{Binding NameUsr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Margin="50 10 0 0" Foreground="#033270" FontWeight="Bold" TextWrapping="WrapWithOverflow"/>
-                    <TextBlock x:Name="Vaitro" Text="{Binding Position}"  HorizontalAlignment="Left"  Margin="55 0 0 0" Foreground="#033270" FontWeight="Light"></TextBlock>-->
+                        <TextBlock x:Name="Vaitro" Text="{Binding Position}"  HorizontalAlignment="Left"  Margin="55 0 0 0" Foreground="#033270" FontWeight="Light"></TextBlock>-->
                             <TextBlock x:Name="Ten" Text="{Binding NameUsr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{DynamicResource Yale Blue}" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center"/>
                             <TextBlock x:Name="Vaitro" Text="{Binding Role, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{DynamicResource Celestial Blue}" FontWeight="Light" HorizontalAlignment="Center"></TextBlock>
                         </StackPanel>
@@ -103,41 +106,41 @@
 
         <!--App Name-->
         <StackPanel
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="3"
-            VerticalAlignment="Center">
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Center">
             <TextBlock FontSize="36" HorizontalAlignment="Center" Text="EDU" Foreground="{StaticResource Yale Blue}" FontWeight="Bold"/>
             <TextBlock FontSize="36" HorizontalAlignment="Center" Text="CONNECT" Foreground="{StaticResource Yale Blue}" FontWeight="Bold"/>
         </StackPanel>
 
         <!--Menu-->
         <Border CornerRadius="0 55 0 0" Grid.Row="2"
-            Grid.Column="0" Width="200" HorizontalAlignment="Left"
-            Grid.RowSpan="8"
-            Grid.ColumnSpan="3"
-            Background="{StaticResource Yale Blue}">
+                Grid.Column="0" Width="200" HorizontalAlignment="Left"
+                Grid.RowSpan="8"
+                Grid.ColumnSpan="3"
+                Background="{StaticResource Yale Blue}">
 
             <!--Đăng xuất-->
             <Button  
-            Command="{Binding navHome}"
-            VerticalAlignment="Bottom"   Background="Transparent" Height="100" BorderBrush="Transparent" >
+                Command="{Binding navHome}"
+                VerticalAlignment="Bottom"   Background="Transparent" Height="100" BorderBrush="Transparent" >
                 <StackPanel >
                     <materialDesign:PackIcon 
-                        Kind="Logout"
-                        Foreground="{StaticResource White}"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Width="25"
-                        Height="36"/>
+                            Kind="Logout"
+                            Foreground="{StaticResource White}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Width="25"
+                            Height="36"/>
                     <TextBlock 
-                        Text="Đăng xuất"
-                        Foreground="{StaticResource White}"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        FontSize="25"
-                        />
+                            Text="Đăng xuất"
+                            Foreground="{StaticResource White}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontSize="25"
+                            />
                 </StackPanel>
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
@@ -150,14 +153,14 @@
 
         <!--Menu Text-->
         <Grid  Grid.Row="2"  Panel.ZIndex="5"
-            Grid.Column="0" HorizontalAlignment="Left"
-            Grid.RowSpan="6"
-            Grid.ColumnSpan="4"
-            >
+                Grid.Column="0" HorizontalAlignment="Left"
+                Grid.RowSpan="6"
+                Grid.ColumnSpan="4"
+                >
             <!--Menu-->
             <StackPanel  
-            x:Name="MenuContainer" VerticalAlignment="Center"
-                 IsEnabled="{Binding IsChecked, ElementName=EnableListBox}">
+                x:Name="MenuContainer" VerticalAlignment="Center"
+                     IsEnabled="{Binding IsChecked, ElementName=EnableListBox}">
 
                 <!--Trang chủ-->
 
@@ -238,18 +241,18 @@
 
                 <!--Cài đặt-->
                 <!--<RadioButton x:Name="rdBtn_Setting" Style="{StaticResource rdbtn_MenuStyle}"  >
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon  Kind="Cog" Style="{StaticResource ic_MenuStyle}"/>
-                    <TextBlock Text="Cài đặt" Style="{StaticResource txtbl_MenuStyle}" />
-                </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon  Kind="Cog" Style="{StaticResource ic_MenuStyle}"/>
+                        <TextBlock Text="Cài đặt" Style="{StaticResource txtbl_MenuStyle}" />
+                    </StackPanel>
 
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="Click">
-                        <i:InvokeCommandAction Command="{Binding navSetting}"></i:InvokeCommandAction>
-                        <i:InvokeCommandAction Command="{Binding updateTabName}" CommandParameter="{Binding ElementName=mainWd}" ></i:InvokeCommandAction>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </RadioButton>-->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding navSetting}"></i:InvokeCommandAction>
+                            <i:InvokeCommandAction Command="{Binding updateTabName}" CommandParameter="{Binding ElementName=mainWd}" ></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </RadioButton>-->
             </StackPanel>
 
 
@@ -259,7 +262,7 @@
         <ContentControl  Content="{Binding CurrentViewModel}" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="14" Grid.RowSpan="8"  Background="DarkGray">
             <ContentControl.Resources>
                 <!--<DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">-->
-                <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                <!--<DataTemplate DataType="{x:Type vm:HomeViewModel}">
                     <viewuc:HomeUC></viewuc:HomeUC>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:ClassViewModel}">
@@ -307,6 +310,9 @@
                 <DataTemplate DataType="{x:Type vm:ExportPro5ViewModel}">
                     <viewuc:ExportPro5></viewuc:ExportPro5>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:AddStudentPro5ViewModel}">
+                    <viewuc:StudentPro5Add></viewuc:StudentPro5Add>
+                </DataTemplate>-->
             </ContentControl.Resources>
         </ContentControl>
 
