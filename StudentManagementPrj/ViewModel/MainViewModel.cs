@@ -53,12 +53,9 @@ namespace StudentManagementPrj.ViewModel
         {
             LoadedMainWd = new RelayCommand<MainWindow>((p) => { return true; }, (p) =>
             {
-                if (p == null)
-                    return;
-                p.Hide();
+                
 
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.ShowDialog();
+                p.Show();
 
                 //LoginWindow loginWindow = new LoginWindow();
                 //loginWindow.ShowDialog();
@@ -101,8 +98,8 @@ namespace StudentManagementPrj.ViewModel
             navHome = new NavigationCommand<HomeViewModel>(navigationStore, () => new HomeViewModel(navigationStore));
             //navClass = new NavigationCommand<ClassViewModel>(navigationStore, () => new ClassViewModel(navigationStore));
             //navGrade = new NavigationCommand<GradeViewModel>(navigationStore, () => new GradeViewModel(navigationStore));
-            //navStatistic = new NavigationCommand<StatisticViewModel>(navigationStore, () => new StatisticViewModel(navigationStore));
-            //navContact = new NavigationCommand<ContactViewModel>(navigationStore, () => new ContactViewModel(navigationStore));
+            navStatistic = new NavigationCommand<StatisticViewModel>(navigationStore, () => new StatisticViewModel(navigationStore));
+            navContact = new NavigationCommand<ContactViewModel>(navigationStore, () => new ContactViewModel(navigationStore));
             //navSetting = new NavigationCommand<SettingViewModel>(navigationStore, () => new SettingViewModel(navigationStore));
             //navProfile = new NavigationCommand<TeacherPro5ViewModel>(navigationStore, () => new TeacherPro5ViewModel(navigationStore));
 

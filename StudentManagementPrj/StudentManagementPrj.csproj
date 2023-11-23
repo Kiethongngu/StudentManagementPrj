@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
     </Reference>
@@ -58,6 +65,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -81,15 +90,30 @@
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\ADMIN.cs" />
+    <Compile Include="Model\DataProvider.cs" />
+    <Compile Include="Model\GIANGDAY.cs" />
+    <Compile Include="Model\GIAOVIEN.cs" />
+    <Compile Include="Model\HOCSINH.cs" />
+    <Compile Include="Model\HOCTAP.cs" />
+    <Compile Include="Model\KETQUA.cs" />
+    <Compile Include="Model\KHOI.cs" />
+    <Compile Include="Model\LOAIDIEM.cs" />
+    <Compile Include="Model\LOGIN.cs" />
+    <Compile Include="Model\LOP.cs" />
+    <Compile Include="Model\Model1.cs" />
+    <Compile Include="Model\MONHOC.cs" />
+    <Compile Include="Model\NHANXET.cs" />
+    <Compile Include="Model\PHUHUYNH.cs" />
+    <Compile Include="Model\TBMON.cs" />
+    <Compile Include="Model\THANHTICH.cs" />
+    <Compile Include="Model\THI.cs" />
+    <Compile Include="Model\TO1.cs" />
     <Compile Include="Service\NavigationService.cs" />
-    <Compile Include="ViewModel\AddStudentPro5ViewModel.cs" />
+    <Compile Include="UCViewModel\MemberCardViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
-    <Compile Include="ViewModel\EditStudentPro5ViewModel.cs" />
-    <Compile Include="ViewModel\EditTeacherPro5ViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModel.cs" />
-    <Compile Include="ViewModel\StudentPro5ViewModel.cs" />
-    <Compile Include="ViewModel\TeacherPro5ViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="UCViewModel\ControlBarViewModel.cs" />
     <Compile Include="UserControlCustom\ControlBarUC.xaml.cs">
@@ -216,7 +240,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Const.cs" />
-    <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -296,5 +319,8 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

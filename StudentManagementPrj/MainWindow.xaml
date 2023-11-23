@@ -279,14 +279,14 @@
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:ScoreDetailViewModel}">
                     <viewuc:ScoreDetail></viewuc:ScoreDetail>
-                </DataTemplate>
+                </DataTemplate>-->
                 <DataTemplate DataType="{x:Type vm:StatisticViewModel}">
-                    <viewuc:StatisticUC></viewuc:StatisticUC>
+                    <viewuc:StatisticViewUC></viewuc:StatisticViewUC>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:ContactViewModel}">
-                    <viewuc:ContactUC></viewuc:ContactUC>
+                    <viewuc:ContactViewUC></viewuc:ContactViewUC>
                 </DataTemplate>
-                <DataTemplate DataType="{x:Type vm:SettingViewModel}">
+                <!--<DataTemplate DataType="{x:Type vm:SettingViewModel}">
                     <viewuc:SettingUC></viewuc:SettingUC>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:TeacherPro5ViewModel}">

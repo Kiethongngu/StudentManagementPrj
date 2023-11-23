@@ -1,4 +1,6 @@
 ﻿using StudentManagementPrj.Model;
+using StudentManagementPrj.Store;
+using StudentManagementPrj.UCViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
