@@ -112,6 +112,8 @@
     <Compile Include="Service\NavigationService.cs" />
     <Compile Include="UCViewModel\MemberCardViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\ClassListViewModel.cs" />
+    <Compile Include="ViewModel\ClassViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />

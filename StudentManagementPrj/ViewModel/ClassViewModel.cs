@@ -16,6 +16,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using StudentManagementPrj.View;
 
+
 namespace StudentManagementPrj.ViewModel
 {
     public class ClassViewModel: BaseViewModel
