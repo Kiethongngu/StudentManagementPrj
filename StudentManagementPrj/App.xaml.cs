@@ -17,18 +17,14 @@ namespace StudentManagementPrj
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            //NavigationStore navigationStore = new NavigationStore();
-            //navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
-            //MainWindow MainWd = new MainWindow()
-            //{
-            //    DataContext = new MainViewModel(navigationStore)
-            //};
-            //MainWindow.Show();
-            //base.OnStartup(e);
-            var newMainWindow = new MainWindow();
-
-            // Show the new main window
-            newMainWindow.Show();
+            NavigationStore navigationStore = new NavigationStore();
+            navigationStore.CurrentViewModel = new HomeViewModel(navigationStore);
+            MainWindow MainWd = new MainWindow()
+            {
+                DataContext = new MainViewModel(navigationStore)
+            };
+            MainWindow.Show();
+            base.OnStartup(e);
 
         }
     }
