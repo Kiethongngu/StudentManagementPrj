@@ -82,6 +82,14 @@
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\NavigationService.cs" />
+    <Compile Include="ViewModel\AddStudentPro5ViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\ContactViewModel.cs" />
+    <Compile Include="ViewModel\EditStudentPro5ViewModel.cs" />
+    <Compile Include="ViewModel\EditTeacherPro5ViewModel.cs" />
+    <Compile Include="ViewModel\StatisticViewModel.cs" />
+    <Compile Include="ViewModel\StudentPro5ViewModel.cs" />
+    <Compile Include="ViewModel\TeacherPro5ViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="UCViewModel\ControlBarViewModel.cs" />
     <Compile Include="UserControlCustom\ControlBarUC.xaml.cs">
@@ -90,7 +98,6 @@
     <Compile Include="UserControlCustom\MemberCard.xaml.cs">
       <DependentUpon>MemberCard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewUCs\ClassListUC.xaml.cs">
