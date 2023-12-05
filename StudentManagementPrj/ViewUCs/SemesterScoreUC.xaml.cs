@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace StudentManagementPrj.ViewUCs
 {
     /// <summary>
-    /// Interaction logic for SemesterScoreUC.xaml
+    /// Interaction logic for SemesterScore.xaml
     /// </summary>
-    public partial class SemesterScoreUC : UserControl
+    public partial class SemesterScore : UserControl
     {
-        public SemesterScoreUC()
+        public SemesterScore()
         {
             InitializeComponent();
         }
