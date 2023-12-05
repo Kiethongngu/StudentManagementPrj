@@ -118,6 +118,7 @@
     <Compile Include="ViewModel\ContactViewModel.cs" />
 
     <Compile Include="ViewModel\EditStudentPro5ViewModel.cs" />
+
     <Compile Include="ViewModel\ExportPro5ViewModel.cs" />
 
     <Compile Include="ViewModel\StatisticViewModel.cs" />
@@ -152,6 +153,9 @@
     </Compile>
     <Compile Include="ViewUCs\ScoreDetail.xaml.cs">
       <DependentUpon>ScoreDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\SemesterScoreUC.xaml.cs">
+      <DependentUpon>SemesterScoreUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUCs\StatisticViewUC.xaml.cs">
       <DependentUpon>StatisticViewUC.xaml</DependentUpon>
@@ -232,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\ScoreDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\SemesterScoreUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
