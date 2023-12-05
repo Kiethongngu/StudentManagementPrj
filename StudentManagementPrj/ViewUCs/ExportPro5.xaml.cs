@@ -25,7 +25,6 @@ namespace StudentManagementPrj.ViewUCs
             InitializeComponent();
         }
 
-
         private void printBtn_Click(object sender, RoutedEventArgs e)
         {
             scroll.ScrollToVerticalOffset(0);
@@ -60,5 +59,6 @@ namespace StudentManagementPrj.ViewUCs
             // Recursive call to find the ScrollViewer
             return FindParentScrollViewer(parent);
         }
+
     }
 }
