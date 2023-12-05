@@ -111,10 +111,12 @@
     <Compile Include="Model\TO1.cs" />
     <Compile Include="Service\NavigationService.cs" />
     <Compile Include="UCViewModel\MemberCardViewModel.cs" />
+    <Compile Include="ViewModel\AddStudentPro5ViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\ClassListViewModel.cs" />
     <Compile Include="ViewModel\ClassViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
+    <Compile Include="ViewModel\EditStudentPro5ViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="UCViewModel\ControlBarViewModel.cs" />
@@ -126,6 +128,7 @@
     </Compile>
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\StudentPro5ViewModel.cs" />
     <Compile Include="ViewUCs\ClassListUC.xaml.cs">
       <DependentUpon>ClassListUC.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,9 @@
     </Compile>
     <Compile Include="ViewUCs\StudentPro5.xaml.cs">
       <DependentUpon>StudentPro5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\StudentPro5Add.xaml.cs">
+      <DependentUpon>StudentPro5Add.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUCs\StudentPro5Edit.xaml.cs">
       <DependentUpon>StudentPro5Edit.xaml</DependentUpon>
@@ -226,6 +232,10 @@
     <Page Include="ViewUCs\StudentPro5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\StudentPro5Add.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewUCs\StudentPro5Edit.xaml">
       <SubType>Designer</SubType>
