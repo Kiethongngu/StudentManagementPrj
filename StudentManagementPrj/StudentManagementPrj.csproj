@@ -116,11 +116,11 @@
     <Compile Include="ViewModel\ClassListViewModel.cs" />
     <Compile Include="ViewModel\ClassViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
+
     <Compile Include="ViewModel\EditStudentPro5ViewModel.cs" />
-<<<<<<< Updated upstream
-=======
+
     <Compile Include="ViewModel\ExportPro5ViewModel.cs" />
->>>>>>> Stashed changes
+
     <Compile Include="ViewModel\StatisticViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="UCViewModel\ControlBarViewModel.cs" />
@@ -144,6 +144,9 @@
     </Compile>
     <Compile Include="ViewUCs\EditScore.xaml.cs">
       <DependentUpon>EditScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\ExportPro5.xaml.cs">
+      <DependentUpon>ExportPro5.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUCs\InputScore.xaml.cs">
       <DependentUpon>InputScore.xaml</DependentUpon>
@@ -223,6 +226,10 @@
     <Page Include="ViewUCs\EditScore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\ExportPro5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewUCs\InputScore.xaml">
       <SubType>Designer</SubType>
