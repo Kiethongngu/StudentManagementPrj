@@ -15,7 +15,7 @@ using StudentManagementPrj.ViewUCs;
 
 namespace StudentManagementPrj.ViewModel
 {
-    internal class SemesterScoreViewModel : BaseViewModel
+    public class SemesterScoreViewModel : BaseViewModel
     {
         public struct semesterScore
         {
