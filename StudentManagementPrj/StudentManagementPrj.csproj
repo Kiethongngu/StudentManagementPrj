@@ -118,6 +118,9 @@
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\EditStudentPro5ViewModel.cs" />
     <Compile Include="ViewModel\ExportPro5ViewModel.cs" />
+    <Compile Include="ViewModel\GradeViewModel.cs" />
+    <Compile Include="ViewModel\InputScoreViewModel.cs" />
+    <Compile Include="ViewModel\SemesterScoreViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="UCViewModel\ControlBarViewModel.cs" />
