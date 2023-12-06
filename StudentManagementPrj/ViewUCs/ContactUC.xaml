@@ -160,3 +160,35 @@
                 </Button>
             </Border>
         </StackPanel>
+        <!--Tongket-->
+        <Border Grid.Row="1" Grid.Column="1" Margin="10 10 10 10" Background="White" BorderThickness="1" CornerRadius="15">
+            <Border.Effect>
+                <DropShadowEffect Opacity="0.25"/>
+            </Border.Effect>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10 20 0 0">
+                    <TextBlock Style="{DynamicResource txtbl_SchoolYear}" TextDecorations="None" FontSize="18" Text="Điểm tổng kết: "/>
+                    <TextBlock Style="{DynamicResource txtbl_Infovalue}" FontSize="18"  Text="{Binding avgSemester}" Margin="20 0 0 0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                    <TextBlock Style="{DynamicResource txtbl_SchoolYear}" TextDecorations="None" FontSize="18" Text="Hạnh kiểm: "/>
+                    <ComboBox Text="{Binding conduct}" SelectedIndex="{Binding cbbSelected}" HorizontalAlignment="Left"
+                        Width="139" Margin="10 5 0 0" Height="39" Padding="20 0"
+                                     FontSize="16"
+                                  BorderBrush="{DynamicResource Yale Blue}"
+                                        Foreground="{DynamicResource Yale Blue}" 
+                              Background="{StaticResource White}"
+                                  Style="{StaticResource MaterialDesignOutlinedComboBox}" 
+                                VerticalContentAlignment="Center">
+                        <ComboBoxItem Content="Tốt"/>
+                        <ComboBoxItem Content="Khá"/>
+                        <ComboBoxItem Content="Trung bình"/>
+                        <ComboBoxItem Content="Yếu"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                    <TextBlock Style="{DynamicResource txtbl_SchoolYear}" TextDecorations="None" FontSize="18" Text="Xếp loại: "/>
+                    <TextBlock Style="{DynamicResource txtbl_Infovalue}" FontSize="18"  Text="{Binding rank}" Margin="20 0 0 0"/>
+                </StackPanel>
