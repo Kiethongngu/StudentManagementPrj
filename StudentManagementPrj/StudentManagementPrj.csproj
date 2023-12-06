@@ -136,6 +136,9 @@
     <Compile Include="ViewUCs\ClassUC.xaml.cs">
       <DependentUpon>ClassUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewUCs\ContactUC.xaml.cs">
+      <DependentUpon>ContactUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewUCs\ContactViewUC.xaml.cs">
       <DependentUpon>ContactViewUC.xaml</DependentUpon>
     </Compile>
@@ -215,6 +218,10 @@
     <Page Include="ViewUCs\ClassUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewUCs\ContactUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\ContactViewUC.xaml">
       <Generator>MSBuild:Compile</Generator>
