@@ -192,3 +192,11 @@
                     <TextBlock Style="{DynamicResource txtbl_SchoolYear}" TextDecorations="None" FontSize="18" Text="Xếp loại: "/>
                     <TextBlock Style="{DynamicResource txtbl_Infovalue}" FontSize="18"  Text="{Binding rank}" Margin="20 0 0 0"/>
                 </StackPanel>
+                
+                <!--Achievement-->
+                <StackPanel Margin="10 10 20 0 ">
+                    <TextBlock Style="{DynamicResource txtbl_SchoolYear}" TextDecorations="None"  FontSize="18" Text="Thành tích"/>
+                    <Border Style="{DynamicResource brd_achievement}">
+                        <TextBox  Style="{DynamicResource tbx_Achievement}"  Text="{Binding achievements}"/>
+                    </Border>
+                </StackPanel>
