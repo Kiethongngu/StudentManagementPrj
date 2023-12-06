@@ -200,3 +200,17 @@
                         <TextBox  Style="{DynamicResource tbx_Achievement}"  Text="{Binding achievements}"/>
                     </Border>
                 </StackPanel>
+                <!--Comment-->
+                <StackPanel Margin="10 10 20 0 ">
+                    <TextBlock Style="{DynamicResource txtbl_SchoolYear}" TextDecorations="None"  FontSize="18" Text="Nhận xét"/>
+                    <Border Style="{DynamicResource brd_achievement}">
+                        <TextBox  Style="{DynamicResource tbx_Achievement}"  Text="{Binding comment}"/>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+
+
+    </Grid>
+</UserControl>
