@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace StudentManagementPrj.ViewUCs
 {
     /// <summary>
-    /// Interaction logic for ContactUC.xaml
+    /// Interaction logic for HomeUC.xaml
     /// </summary>
-    public partial class ContactUC : UserControl
+    public partial class HomeUC : UserControl
     {
-        public ContactUC()
+        public HomeUC()
         {
             InitializeComponent();
         }

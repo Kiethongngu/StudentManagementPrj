@@ -136,9 +136,6 @@
     <Compile Include="ViewUCs\ClassUC.xaml.cs">
       <DependentUpon>ClassUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewUCs\ContactUC.xaml.cs">
-      <DependentUpon>ContactUC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewUCs\ContactViewUC.xaml.cs">
       <DependentUpon>ContactViewUC.xaml</DependentUpon>
     </Compile>
@@ -147,6 +144,9 @@
     </Compile>
     <Compile Include="ViewUCs\ExportPro5.xaml.cs">
       <DependentUpon>ExportPro5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUCs\HomeUC.xaml.cs">
+      <DependentUpon>HomeUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUCs\InputScore.xaml.cs">
       <DependentUpon>InputScore.xaml</DependentUpon>
@@ -219,10 +219,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewUCs\ContactUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ViewUCs\ContactViewUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -234,6 +230,10 @@
     <Page Include="ViewUCs\ExportPro5.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewUCs\HomeUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\InputScore.xaml">
       <SubType>Designer</SubType>
