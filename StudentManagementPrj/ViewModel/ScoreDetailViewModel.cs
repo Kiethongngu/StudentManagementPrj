@@ -1,5 +1,7 @@
-﻿using System;
+﻿using StudentManagementPrj.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +46,35 @@ namespace StudentManagementPrj.ViewModel
         public List<scoreTable_Year> scoreTableList_Year { get => _scoreTableList_Year; set { _scoreTableList_Year = value; OnPropertyChanged(); } }
 
 
+        //variable binding
+        private string _name;
+        public string name { get => _name; set { _name = value; OnPropertyChanged(); } }
+        private string _className;
+        public string className { get => _className; set { _className = value; OnPropertyChanged(); } }
+        private string _formTeacher;
+        public string formTeacher { get => _formTeacher; set { _formTeacher = value; OnPropertyChanged(); } }
 
+        private string _schoolYear;
+        public string schoolYear { get => _schoolYear; set { _schoolYear = value; OnPropertyChanged(); } }
+
+        private int _semester;
+        public int semester { get => _semester; set { _semester = value; OnPropertyChanged(); } }
+        private string _avgSemester;
+        public string avgSemester { get => _avgSemester; set { _avgSemester = value; OnPropertyChanged(); } }
+        private string _conduct;
+        public string conduct { get => _conduct; set { _conduct = value; OnPropertyChanged(); } }
+        private string _rank;
+        public string rank { get => _rank; set { _rank = value; OnPropertyChanged(); } }
+        private string _achievements;
+        public string achievements { get => _achievements; set { _achievements = value; OnPropertyChanged(); } }
+        private string _comment;
+        public string comment { get => _comment; set { _comment = value; OnPropertyChanged(); } }
+        private ObservableCollection<MONHOC> _subjectList;
+        public ObservableCollection<MONHOC> subjectList { get => _subjectList; set { _subjectList = value; OnPropertyChanged(); } }
+
+        private ObservableCollection<THI> _testList;
+        public ObservableCollection<THI> testList { get => _testList; set { _testList = value; OnPropertyChanged(); } }
+        private ObservableCollection<TBMON> _avgList;
+        public ObservableCollection<TBMON> avgList { get => _avgList; set { _avgList = value; OnPropertyChanged(); } }
     }
 }
