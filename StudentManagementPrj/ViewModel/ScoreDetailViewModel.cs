@@ -1,4 +1,7 @@
-﻿using StudentManagementPrj.Model;
+﻿using StudentManagementPrj.Commands;
+using StudentManagementPrj.Model;
+using StudentManagementPrj.Store;
+using StudentManagementPrj.ViewUCs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -76,5 +79,35 @@ namespace StudentManagementPrj.ViewModel
         public ObservableCollection<THI> testList { get => _testList; set { _testList = value; OnPropertyChanged(); } }
         private ObservableCollection<TBMON> _avgList;
         public ObservableCollection<TBMON> avgList { get => _avgList; set { _avgList = value; OnPropertyChanged(); } }
+
+        public ScoreDetailViewModel(NavigationStore navigationStore)
+        {
+            SemesterScoreViewModel.selectedStudent selectedStuddent = SemesterScoreViewModel.CurrentSelected;
+
+            //navigate
+            navBack = new NavigationCommand<SemesterScoreViewModel>(navigationStore, () => new SemesterScoreViewModel(navigationStore));
+            navEdit = new NavigationCommand<EditScoreViewModel>(navigationStore, () => new EditScoreViewModel(navigationStore));
+
+            //infor
+            name = DataProvider.Ins.DB.HOCSINHs.Where(x => x.MAHS == selectedStuddent.mahs && x.DELETED == false).FirstOrDefault().HOTEN;
+            var tempClass = DataProvider.Ins.DB.LOPs.Where(x => x.MALOP == selectedStuddent.malop && x.DELETED == false).FirstOrDefault();
+            className = tempClass.TENLOP;
+            formTeacher = DataProvider.Ins.DB.GIAOVIENs.Where(x => x.MAGV == tempClass.GVCN && x.DELETED == false).FirstOrDefault().HOTEN;
+            schoolYear = "NIÊN KHÓA " + Const.SchoolYear;
+            semester = 1;
+
+            //list
+            subjectList = new ObservableCollection<MONHOC>(DataProvider.Ins.DB.MONHOCs.Where(x => x.DELETED == false));
+            testList = new ObservableCollection<THI>(DataProvider.Ins.DB.THIs.Where(x => x.DELETED == false));
+            avgList = new ObservableCollection<TBMON>(DataProvider.Ins.DB.TBMONs.Where(x => x.DELETED == false));
+
+            //datagrid
+            _UpdateScoreTable(selectedStuddent.mahs, selectedStuddent.malop);
+            _UpdateScoreTable_Year(selectedStuddent.mahs, selectedStuddent.malop);
+
+            //changeCbb
+            changeScoreTb = new RelayCommand<ScoreDetail>((p) => { return true; }, (p) => _cbbChanged(p, selectedStuddent.mahs, selectedStuddent.malop));
+
+        }
     }
 }
