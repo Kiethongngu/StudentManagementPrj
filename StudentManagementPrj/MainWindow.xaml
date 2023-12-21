@@ -262,10 +262,10 @@
         <ContentControl  Content="{Binding CurrentViewModel}" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="14" Grid.RowSpan="8"  Background="DarkGray">
             <ContentControl.Resources>
                 <!--<DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">-->
-                <!--<DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                <DataTemplate DataType="{x:Type vm:HomeViewModel}">
                     <viewuc:HomeUC></viewuc:HomeUC>
                 </DataTemplate>
-                <DataTemplate DataType="{x:Type vm:ClassViewModel}">
+                <!--<DataTemplate DataType="{x:Type vm:ClassViewModel}">
                     <viewuc:ClassUC></viewuc:ClassUC>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:ClassListViewModel}">
