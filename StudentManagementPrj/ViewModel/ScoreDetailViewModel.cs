@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace StudentManagementPrj.ViewModel
@@ -108,6 +109,157 @@ namespace StudentManagementPrj.ViewModel
             //changeCbb
             changeScoreTb = new RelayCommand<ScoreDetail>((p) => { return true; }, (p) => _cbbChanged(p, selectedStuddent.mahs, selectedStuddent.malop));
 
+        }
+
+        void _cbbChanged(ScoreDetail p, int n, int m)
+        {
+            semester = p.cbb_Semester.SelectedIndex;
+            if (semester == 0)
+            {
+                p.dtg_Scoretable_Year.Visibility = Visibility.Visible;
+                p.dtg_Scoretable.Visibility = Visibility.Hidden;
+                p.brd_year.Visibility = Visibility.Visible;
+                _UpdateScoreTable_Year(n, m);
+                p.dtg_Scoretable_Year.Items.Refresh();
+
+            }
+            else
+            {
+                p.dtg_Scoretable.Visibility = Visibility.Visible;
+                p.dtg_Scoretable_Year.Visibility = Visibility.Hidden;
+                p.brd_year.Visibility = Visibility.Hidden;
+                _UpdateScoreTable(n, m);
+                p.dtg_Scoretable.Items.Refresh();
+            }
+
+        }
+        void _UpdateScoreTable_Year(int mahs, int classID)
+        {
+            scoreTableList_Year.Clear();
+            foreach (MONHOC mh in subjectList)
+            {
+                scoreTable_Year sc = new scoreTable_Year();
+                sc.subject = mh.TENMH;
+                foreach (TBMON tbm in avgList)
+                {
+                    if (tbm.MAMH == mh.MAMH && tbm.MAHS == mahs && tbm.MALOP == classID)
+                    {
+                        switch (tbm.HOCKY)
+                        {
+                            case 1:
+                                sc.avg_1 = tbm.DTB;
+                                break;
+                            case 2:
+                                sc.avg_2 = tbm.DTB;
+                                break;
+                            case 0:
+                                sc.avg_Year = tbm.DTB;
+                                break;
+                        }
+                    }
+                }
+                scoreTableList_Year.Add(sc);
+            }
+
+            var tempKQ = DataProvider.Ins.DB.KETQUAs.Where(x => x.MAHS == mahs && x.MALOP == classID && x.HOCKY == semester && x.DELETED == false).FirstOrDefault();
+            if (tempKQ != null)
+            {
+                avgSemester = String.Format("{0:0.00}", tempKQ.DTB);
+                if (semester < Const.Semester)
+                {
+                    rank = tempKQ.XEPLOAI;
+                    conduct = tempKQ.HANHKIEM;
+                }
+            }
+            var tempTT = DataProvider.Ins.DB.THANHTICHes.Where(x => x.MAHS == mahs && x.MALOP == classID && x.DELETED == false).FirstOrDefault();
+            if (tempTT != null)
+            {
+                achievements = tempTT.TENTT;
+            }
+            var tempNX = DataProvider.Ins.DB.NHANXETs.Where(x => x.MAHS == mahs && x.MALOP == classID && x.HOCKY == semester && x.DELETED == false).FirstOrDefault();
+            if (tempNX != null)
+            {
+                comment = tempNX.NHANXET1;
+            }
+            else comment = "";
+        }
+        void _UpdateScoreTable(int mahs, int classID)
+        {
+            scoreTableList.Clear();
+
+            string[] scoreTemp = Enumerable.Repeat("", 3).ToArray();
+            string[] scoreTemp45 = Enumerable.Repeat("", 3).ToArray();
+            int index = 0, index45 = 0;
+
+            foreach (MONHOC mh in subjectList)
+            {
+                scoreTable sc = new scoreTable();
+                sc.subject = mh.TENMH;
+                foreach (THI thi in testList)
+                {
+                    if (thi.MAMH == mh.MAMH && thi.HOCKY == semester && thi.MAHS == mahs && thi.MALOP == classID)
+                    {
+                        switch (thi.MALD)
+                        {
+                            case 1:
+                                sc.mieng = thi.DIEM;
+                                break;
+                            case 2:
+                                scoreTemp[index] = thi.DIEM;
+                                index++;
+                                break;
+                            case 3:
+                                scoreTemp45[index45] = thi.DIEM;
+                                index45++;
+
+                                break;
+                            case 4:
+                                sc.test = thi.DIEM;
+                                break;
+                        }
+                    }
+                }
+                var tempTBHK = DataProvider.Ins.DB.TBMONs.Where(x => x.MAHS == mahs && x.MALOP == classID && x.MAMH == mh.MAMH && x.HOCKY == semester && x.DELETED == false).FirstOrDefault();
+                if (tempTBHK != null)
+                    sc.avg = tempTBHK.DTB;
+                sc.min15_1 = scoreTemp[0];
+                sc.min15_2 = scoreTemp[1];
+                sc.min15_3 = scoreTemp[2];
+                sc.min45_1 = scoreTemp45[0];
+                sc.min45_2 = scoreTemp45[1];
+                index = 0;
+                scoreTemp = Enumerable.Repeat("", 3).ToArray();
+                index45 = 0;
+                scoreTemp45 = Enumerable.Repeat("", 3).ToArray();
+
+                scoreTableList.Add(sc);
+            }
+
+            var tempKQ = DataProvider.Ins.DB.KETQUAs.Where(x => x.MAHS == mahs && x.MALOP == classID && x.HOCKY == semester && x.DELETED == false).FirstOrDefault();
+            if (tempKQ != null)
+            {
+                avgSemester = String.Format("{0:0.00}", tempKQ.DTB);
+                if (semester < Const.Semester)
+                {
+                    rank = tempKQ.XEPLOAI;
+                    conduct = tempKQ.HANHKIEM;
+                }
+            }
+            else avgSemester = "";
+            rank = "";
+            conduct = "";
+
+            var tempTT = DataProvider.Ins.DB.THANHTICHes.Where(x => x.MAHS == mahs && x.MALOP == classID && x.DELETED == false).FirstOrDefault();
+            if (tempTT != null)
+            {
+                achievements = tempTT.TENTT;
+            }
+            var tempNX = DataProvider.Ins.DB.NHANXETs.Where(x => x.MAHS == mahs && x.MALOP == classID && x.HOCKY == semester && x.DELETED == false).FirstOrDefault();
+            if (tempNX != null)
+            {
+                comment = tempNX.NHANXET1;
+            }
+            else comment = "";
         }
     }
 }
