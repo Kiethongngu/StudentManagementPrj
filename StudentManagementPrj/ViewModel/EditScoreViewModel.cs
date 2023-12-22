@@ -44,5 +44,34 @@ namespace StudentManagementPrj.ViewModel
         public List<scoreTable> scoreTableList { get => _scoreTableList; set { _scoreTableList = value; OnPropertyChanged(); } }
         private List<scoreTable_Year> _scoreTableList_Year = new List<scoreTable_Year>();
         public List<scoreTable_Year> scoreTableList_Year { get => _scoreTableList_Year; set { _scoreTableList_Year = value; OnPropertyChanged(); } }
+
+        //variable binding
+        private string _studentName;
+        public string studentName { get => _studentName; set { _studentName = value; OnPropertyChanged(); } }
+        private string _className;
+        public string className { get => _className; set { _className = value; OnPropertyChanged(); } }
+        private string _formTeacher;
+        public string formTeacher { get => _formTeacher; set { _formTeacher = value; OnPropertyChanged(); } }
+
+        private string _schoolYear;
+        public string schoolYear { get => _schoolYear; set { _schoolYear = value; OnPropertyChanged(); } }
+
+        //0: ca nam, 1: hk1, 2: hk2
+        private int _semester;
+        public int semester { get => _semester; set { _semester = value; OnPropertyChanged(); } }
+        private string _avgSemester;
+        public string avgSemester { get => _avgSemester; set { _avgSemester = value; OnPropertyChanged(); } }
+        private string _conduct;
+        public string conduct { get => _conduct; set { _conduct = value; OnPropertyChanged(); } }
+        private string _rank;
+        public string rank { get => _rank; set { _rank = value; OnPropertyChanged(); } }
+        private string _achievements;
+        public string achievements { get => _achievements; set { _achievements = value; OnPropertyChanged(); } }
+        private string _comment;
+        public string comment { get => _comment; set { _comment = value; OnPropertyChanged(); } }
+
+        private int _cbbSelected;
+        public int cbbSelected { get => _cbbSelected; set { _cbbSelected = value; OnPropertyChanged(); } }
     }
+
 }
