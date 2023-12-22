@@ -1,10 +1,15 @@
-﻿using StudentManagementPrj.Model;
+﻿using StudentManagementPrj.Commands;
+using StudentManagementPrj.Model;
+using StudentManagementPrj.Store;
+using StudentManagementPrj.View;
+using StudentManagementPrj.ViewUCs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace StudentManagementPrj.ViewModel
@@ -58,6 +63,111 @@ namespace StudentManagementPrj.ViewModel
         public string visLine2 { get => _visLine2; set { _visLine2 = value; OnPropertyChanged(); } }
         private string _semester;
         public string semester { get => _semester; set { _semester = value; OnPropertyChanged(); } }
+
+        public GradeViewModel(NavigationStore navigationStore)
+        {
+            semester = "Học kì " + Const.Semester;
+            if (semester == "Học kì 1")
+            {
+                visLine1 = "Visible";
+                visLine2 = "Collapsed";
+            }
+            else
+            {
+                visLine1 = "Collapsed";
+                visLine2 = "Visible";
+            }
+
+            schoolYear = "NIÊN KHÓA " + Const.SchoolYear;
+            if (!Const.IsAdmin)
+            {
+
+                AvailableClass availableClass = new AvailableClass();
+
+                navScoreTable = new NavigationCommand<SemesterScoreViewModel>(navigationStore, () => new SemesterScoreViewModel(navigationStore));
+                navInputscore = new NavigationCommand<InputScoreViewModel>(navigationStore, () => new InputScoreViewModel(navigationStore));
+
+                Detail = new RelayCommand<DataGrid>((p) => { return p.SelectedItem == null ? false : true; }, (p) => _Detail(p));
+                getDetail = new RelayCommand<GradeUC>((p) => { return p.dtg_Input1.SelectedItem == null && p.dtg_Input2.SelectedItem == null ? false : true; }, (p) => _GetDetail(p));
+
+                //ListDTB
+                ClassList = new ObservableCollection<LOP>(DataProvider.Ins.DB.LOPs.Where(x => x.DELETED == false));
+                Teacher = new ObservableCollection<GIAOVIEN>(DataProvider.Ins.DB.GIAOVIENs.Where(x => x.DELETED == false));
+                Teaching = new ObservableCollection<GIANGDAY>(DataProvider.Ins.DB.GIANGDAYs.Where(x => x.DELETED == false));
+
+                //Infor
+                var temp = DataProvider.Ins.DB.GIAOVIENs.Where(x => x.MAGV == Const.KeyID && x.DELETED == false).FirstOrDefault();
+                email = temp.EMAIL;
+                address = temp.DIACHI;
+                school = Const.School;
+                var temp2 = DataProvider.Ins.DB.TO1.Where(x => x.MATO == temp.MATO && x.DELETED == false).FirstOrDefault();
+                group = "Tổ " + temp2.TENTO;
+
+                //Lop chu nhiem
+                foreach (LOP lop in ClassList)
+                {
+                    if (lop.GVCN == Const.KeyID && lop.DELETED == false)
+                    {
+                        availableClass.ClassID = lop.MALOP;
+                        availableClass.Grade = " " + lop.TENLOP.Substring(0, 2);
+                        availableClass.Class = lop.TENLOP;
+                        availableClass.NumofAttendants = (int)lop.SISO;
+                        foreach (GIAOVIEN gv in Teacher)
+                        {
+                            if (gv.MAGV == lop.GVCN && gv.DELETED == false) availableClass.Teacher = gv.HOTEN;
+                        }
+                    }
+                }
+                if (availableClass.ClassID != 0)
+                    HomeroomList.Add(availableClass);
+
+                //Lop Giang day
+                ClassUC classuc = new ClassUC();
+
+                foreach (GIANGDAY gd in Teaching)
+                {
+                    if (gd.MAGV == Const.KeyID)
+                    {
+                        foreach (LOP lop in ClassList)
+                        {
+                            if (lop.MALOP == gd.MALOP)
+                            {
+                                availableClass.ClassID = lop.MALOP;
+                                availableClass.Grade = lop.TENLOP.Substring(0, 2);
+                                availableClass.Class = lop.TENLOP;
+                                availableClass.NumofAttendants = (int)lop.SISO;
+                                foreach (GIAOVIEN gv in Teacher)
+                                {
+                                    if (gv.MAGV == lop.GVCN && gv.DELETED == false) availableClass.Teacher = gv.HOTEN;
+                                }
+                                TeachingList.Add(availableClass);
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            void _Detail(DataGrid p)
+            {
+                CurrentSelected = (AvailableClass)p.SelectedItem;
+            }
+            void _GetDetail(GradeUC p)
+            {
+
+                if (p.dtg_Input1.SelectedIndex == -1)
+                {
+                    p.dtg_Class.SelectedIndex = p.dtg_Input2.SelectedIndex;
+                    _Detail(p.dtg_Class);
+                }
+                else
+                {
+                    p.dtg_HomeRoomList.SelectedIndex = p.dtg_Input1.SelectedIndex;
+                    _Detail(p.dtg_HomeRoomList);
+                }
+
+            }
+        }
 
     }
 }
