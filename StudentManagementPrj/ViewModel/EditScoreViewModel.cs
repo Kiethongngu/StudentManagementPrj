@@ -1,8 +1,13 @@
-﻿using System;
+﻿using StudentManagementPrj.Commands;
+using StudentManagementPrj.Model;
+using StudentManagementPrj.Store;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace StudentManagementPrj.ViewModel
@@ -72,6 +77,61 @@ namespace StudentManagementPrj.ViewModel
 
         private int _cbbSelected;
         public int cbbSelected { get => _cbbSelected; set { _cbbSelected = value; OnPropertyChanged(); } }
+
+        public struct Subject
+        {
+            public string name { get; set; }
+        }
+        //private List<Subject> _SubjectList = new List<Subject>();
+        //public List<Subject> SubjectList { get => _SubjectList; set { _SubjectList = value; OnPropertyChanged(); } }
+        private ObservableCollection<MONHOC> _subjectList;
+        public ObservableCollection<MONHOC> subjectList { get => _subjectList; set { _subjectList = value; OnPropertyChanged(); } }
+
+        private ObservableCollection<THI> _testList;
+        public ObservableCollection<THI> testList { get => _testList; set { _testList = value; OnPropertyChanged(); } }
+        private ObservableCollection<TBMON> _avgList;
+        public ObservableCollection<TBMON> avgList { get => _avgList; set { _avgList = value; OnPropertyChanged(); } }
+
+        private ObservableCollection<GIANGDAY> _teachingList;
+        public ObservableCollection<GIANGDAY> teachingList { get => _teachingList; set { _teachingList = value; OnPropertyChanged(); } }
+
+
+        public EditScoreViewModel(NavigationStore navigationStore)
+        {
+            SemesterScoreViewModel.selectedStudent selectedStuddent = SemesterScoreViewModel.CurrentSelected;
+
+            //navigate
+            navBack = new NavigationCommand<ScoreDetailViewModel>(navigationStore, () => new ScoreDetailViewModel(navigationStore));
+
+            //infor
+            studentName = DataProvider.Ins.DB.HOCSINHs.Where(x => x.MAHS == selectedStuddent.mahs && x.DELETED == false).FirstOrDefault().HOTEN;
+            var tempClass = DataProvider.Ins.DB.LOPs.Where(x => x.MALOP == selectedStuddent.malop && x.DELETED == false).FirstOrDefault();
+            className = tempClass.TENLOP;
+            formTeacher = DataProvider.Ins.DB.GIAOVIENs.Where(x => x.MAGV == tempClass.GVCN && x.DELETED == false).FirstOrDefault().HOTEN;
+            schoolYear = "NIÊN KHÓA " + Const.SchoolYear;
+            semester = Const.Semester;
+
+            //list
+            subjectList = new ObservableCollection<MONHOC>(DataProvider.Ins.DB.MONHOCs.Where(x => x.DELETED == false));
+            testList = new ObservableCollection<THI>(DataProvider.Ins.DB.THIs.Where(x => x.DELETED == false));
+            avgList = new ObservableCollection<TBMON>(DataProvider.Ins.DB.TBMONs.Where(x => x.DELETED == false));
+            teachingList = new ObservableCollection<GIANGDAY>(DataProvider.Ins.DB.GIANGDAYs.Where(x => x.DELETED == false));
+
+            //datagrid
+            _UpdateScoreTable(selectedStuddent.mahs, selectedStuddent.malop);
+            _UpdateScoreTable_Year(selectedStuddent.mahs, selectedStuddent.malop);
+
+            //changeCbb
+            //changeScoreTb = new RelayCommand<EditScore>((p) => { return true; }, (p) => _cbbChanged(p, selectedStuddent.mahs, selectedStuddent.malop));
+            //showMessage = new RelayCommand<EditScore>((p) => { return true; }, (p) => { MessageBoxResult result = MessageBox.Show("Thông tin chưa được lưu.", "Confirmation"); });
+
+            //Edit
+            EditCommand = new RelayCommand<DataGrid>((p) =>
+            {
+                return true;
+
+            }, (p) => _EditSave(p, selectedStuddent.mahs, selectedStuddent.malop));
+        }
     }
 
 }
