@@ -41,5 +41,23 @@ namespace StudentManagementPrj.ViewModel
         public ObservableCollection<GIAOVIEN> Teacher { get => _Teacher; set { _Teacher = value; OnPropertyChanged(); } }
         private ObservableCollection<GIANGDAY> _Teaching;
         public ObservableCollection<GIANGDAY> Teaching { get => _Teaching; set { _Teaching = value; OnPropertyChanged(); } }
+
+        private string _schoolYear;
+        public string schoolYear { get => _schoolYear; set { _schoolYear = value; OnPropertyChanged(); } }
+        private string _email;
+        public string email { get => _email; set { _email = value; OnPropertyChanged(); } }
+        private string _address;
+        public string address { get => _address; set { _address = value; OnPropertyChanged(); } }
+        private string _school;
+        public string school { get => _school; set { _school = value; OnPropertyChanged(); } }
+        private string _group;
+        public string group { get => _group; set { _group = value; OnPropertyChanged(); } }
+        private string _visLine1;
+        public string visLine1 { get => _visLine1; set { _visLine1 = value; OnPropertyChanged(); } }
+        private string _visLine2;
+        public string visLine2 { get => _visLine2; set { _visLine2 = value; OnPropertyChanged(); } }
+        private string _semester;
+        public string semester { get => _semester; set { _semester = value; OnPropertyChanged(); } }
+
     }
 }
