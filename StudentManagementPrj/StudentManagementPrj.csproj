@@ -148,6 +148,9 @@
     <Compile Include="ViewUCs\ExportPro5.xaml.cs">
       <DependentUpon>ExportPro5.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewUCs\GradeUC.xaml.cs">
+      <DependentUpon>GradeUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewUCs\HomeUC.xaml.cs">
       <DependentUpon>HomeUC.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
     <Page Include="ViewUCs\ExportPro5.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewUCs\GradeUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\HomeUC.xaml">
       <SubType>Designer</SubType>
