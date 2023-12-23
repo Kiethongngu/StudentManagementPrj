@@ -265,7 +265,7 @@
                 <DataTemplate DataType="{x:Type vm:HomeViewModel}">
                     <viewuc:HomeUC></viewuc:HomeUC>
                 </DataTemplate>
-                <!--<DataTemplate DataType="{x:Type vm:ClassViewModel}">
+                <DataTemplate DataType="{x:Type vm:ClassViewModel}">
                     <viewuc:ClassUC></viewuc:ClassUC>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:ClassListViewModel}">
@@ -279,15 +279,15 @@
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:ScoreDetailViewModel}">
                     <viewuc:ScoreDetail></viewuc:ScoreDetail>
-                </DataTemplate>-->
+                </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:StatisticViewModel}">
                     <viewuc:StatisticViewUC></viewuc:StatisticViewUC>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:ContactViewModel}">
                     <viewuc:ContactViewUC></viewuc:ContactViewUC>
                 </DataTemplate>
-                <!--<DataTemplate DataType="{x:Type vm:SettingViewModel}">
-                    <viewuc:SettingUC></viewuc:SettingUC>
+                <DataTemplate DataType="{x:Type vm:SettingViewModel}">
+                    <!--<viewuc:SettingUC></viewuc:SettingUC>-->
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type vm:TeacherPro5ViewModel}">
                     <viewuc:TeacherPro5></viewuc:TeacherPro5>
@@ -310,9 +310,6 @@
                 <DataTemplate DataType="{x:Type vm:ExportPro5ViewModel}">
                     <viewuc:ExportPro5></viewuc:ExportPro5>
                 </DataTemplate>
-                <DataTemplate DataType="{x:Type vm:AddStudentPro5ViewModel}">
-                    <viewuc:StudentPro5Add></viewuc:StudentPro5Add>
-                </DataTemplate>-->
             </ContentControl.Resources>
         </ContentControl>
 

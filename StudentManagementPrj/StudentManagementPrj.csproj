@@ -118,11 +118,13 @@
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\EditScoreViewModel.cs" />
     <Compile Include="ViewModel\EditStudentPro5ViewModel.cs" />
+    <Compile Include="ViewModel\EditTeacherPro5ViewModel.cs" />
     <Compile Include="ViewModel\ExportPro5ViewModel.cs" />
     <Compile Include="ViewModel\GradeViewModel.cs" />
     <Compile Include="ViewModel\InputScoreViewModel.cs" />
     <Compile Include="ViewModel\ScoreDetailViewModel.cs" />
     <Compile Include="ViewModel\SemesterScoreViewModel.cs" />
+    <Compile Include="ViewModel\SettingViewModel.cs" />
     <Compile Include="ViewModel\StatisticViewModel.cs" />
     <Compile Include="Store\NavigationStore.cs" />
     <Compile Include="UCViewModel\ControlBarViewModel.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\StudentPro5ViewModel.cs" />
+    <Compile Include="ViewModel\TeacherPro5ViewModel.cs" />
     <Compile Include="ViewUCs\ClassListUC.xaml.cs">
       <DependentUpon>ClassListUC.xaml</DependentUpon>
     </Compile>
@@ -224,8 +227,8 @@
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="ViewUCs\ClassUC.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\ContactViewUC.xaml">
       <Generator>MSBuild:Compile</Generator>

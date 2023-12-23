@@ -1,7 +1,6 @@
 ﻿using StudentManagementPrj.Commands;
 using StudentManagementPrj.Model;
 using StudentManagementPrj.Store;
-using StudentManagementPrj.View;
 using StudentManagementPrj.ViewUCs;
 using System;
 using System.Collections.Generic;
@@ -122,7 +121,7 @@ namespace StudentManagementPrj.ViewModel
                     HomeroomList.Add(availableClass);
 
                 //Lop Giang day
-                ClassUC classuc = new ClassUC();
+                ViewUCs.ClassUC classuc = new ViewUCs.ClassUC();
 
                 foreach (GIANGDAY gd in Teaching)
                 {

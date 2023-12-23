@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace StudentManagementPrj.View
+namespace StudentManagementPrj.ViewUCs
 {
     /// <summary>
     /// Interaction logic for ClassUC.xaml

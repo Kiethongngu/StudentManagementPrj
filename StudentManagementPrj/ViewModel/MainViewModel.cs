@@ -96,16 +96,16 @@ namespace StudentManagementPrj.ViewModel
             updateTabPro5 = new RelayCommand<MainWindow>((p) => { return true; }, (p) => _UpdateTabPro5(p));
 
             navHome = new NavigationCommand<HomeViewModel>(navigationStore, () => new HomeViewModel(navigationStore));
-            //navClass = new NavigationCommand<ClassViewModel>(navigationStore, () => new ClassViewModel(navigationStore));
-            //navGrade = new NavigationCommand<GradeViewModel>(navigationStore, () => new GradeViewModel(navigationStore));
+            navClass = new NavigationCommand<ClassViewModel>(navigationStore, () => new ClassViewModel(navigationStore));
+            navGrade = new NavigationCommand<GradeViewModel>(navigationStore, () => new GradeViewModel(navigationStore));
             navStatistic = new NavigationCommand<StatisticViewModel>(navigationStore, () => new StatisticViewModel(navigationStore));
             navContact = new NavigationCommand<ContactViewModel>(navigationStore, () => new ContactViewModel(navigationStore));
-            //navSetting = new NavigationCommand<SettingViewModel>(navigationStore, () => new SettingViewModel(navigationStore));
-            //navProfile = new NavigationCommand<TeacherPro5ViewModel>(navigationStore, () => new TeacherPro5ViewModel(navigationStore));
+            navSetting = new NavigationCommand<SettingViewModel>(navigationStore, () => new SettingViewModel(navigationStore));
+            navProfile = new NavigationCommand<TeacherPro5ViewModel>(navigationStore, () => new TeacherPro5ViewModel(navigationStore));
 
-            //navClass1 = new NavigationCommand<ClassViewModel>(navigationStore, () => new ClassViewModel(navigationStore));
-            //navInputScore = new NavigationCommand<InputScoreViewModel>(navigationStore, () => new InputScoreViewModel(navigationStore));
-            //navEditScore = new NavigationCommand<EditScoreViewModel>(navigationStore, () => new EditScoreViewModel(navigationStore));
+            navClass1 = new NavigationCommand<ClassViewModel>(navigationStore, () => new ClassViewModel(navigationStore));
+            navInputScore = new NavigationCommand<InputScoreViewModel>(navigationStore, () => new InputScoreViewModel(navigationStore));
+            navEditScore = new NavigationCommand<EditScoreViewModel>(navigationStore, () => new EditScoreViewModel(navigationStore));
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
 

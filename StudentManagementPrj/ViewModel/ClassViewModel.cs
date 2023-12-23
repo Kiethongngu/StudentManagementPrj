@@ -14,7 +14,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
 using System.Windows;
-using StudentManagementPrj.View;
 
 
 namespace StudentManagementPrj.ViewModel
