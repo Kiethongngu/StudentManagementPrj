@@ -168,6 +168,9 @@
     <Compile Include="ViewUCs\SemesterScoreUC.xaml.cs">
       <DependentUpon>SemesterScoreUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewUCs\SettingUC.xaml.cs">
+      <DependentUpon>SettingUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewUCs\StatisticViewUC.xaml.cs">
       <DependentUpon>StatisticViewUC.xaml</DependentUpon>
     </Compile>
@@ -259,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewUCs\SemesterScoreUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewUCs\SettingUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
