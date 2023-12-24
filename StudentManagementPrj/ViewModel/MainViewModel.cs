@@ -53,40 +53,40 @@ namespace StudentManagementPrj.ViewModel
         {
             LoadedMainWd = new RelayCommand<MainWindow>((p) => { return true; }, (p) =>
             {
-                
+                if (p == null)
+                    return;
+                p.Hide();
 
-                p.Show();
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.ShowDialog();
 
-                //LoginWindow loginWindow = new LoginWindow();
-                //loginWindow.ShowDialog();
-
-                //if (loginWindow.DataContext == null)
-                //    return;
-                //var loginVM = loginWindow.DataContext as LoginViewModel;
-                //if (loginVM.IsLogin)
-                //{
-                //    if (Const.IsAdmin)
-                //    {
-                //        NameUsr = DataProvider.Ins.DB.ADMINs.Where(x => x.MAAD == Const.KeyID && x.DELETED != true).ToList()[0].TENAD.ToString();
-                //        Role = "ADMIN";
-                //    }
-                //    else
-                //    {
-                //        NameUsr = DataProvider.Ins.DB.GIAOVIENs.Where(x => x.MAGV == Const.KeyID && x.DELETED != true).ToList()[0].HOTEN.ToString();
-                //        Role = "GIÁO VIÊN";
-                //    }
-                //    Ava = Const.AVA;
-                //    //if (Ava != null)
-                //    //{
-                //    //    //string str = Const._localLink + Const.AVA.Remove(0, 2);
-                //    //    p.ava.ImageSource = (ImageSource)new ImageSourceConverter().ConvertFromString(Ava);
-                //    //}
-                //    p.Show();
-                //}
-                //else
-                //{
-                //    p.Close();
-                //}
+                if (loginWindow.DataContext == null)
+                    return;
+                var loginVM = loginWindow.DataContext as LoginViewModel;
+                if (loginVM.IsLogin)
+                {
+                    if (Const.IsAdmin)
+                    {
+                        NameUsr = DataProvider.Ins.DB.ADMINs.Where(x => x.MAAD == Const.KeyID && x.DELETED != true).ToList()[0].TENAD.ToString();
+                        Role = "ADMIN";
+                    }
+                    else
+                    {
+                        NameUsr = DataProvider.Ins.DB.GIAOVIENs.Where(x => x.MAGV == Const.KeyID && x.DELETED != true).ToList()[0].HOTEN.ToString();
+                        Role = "GIÁO VIÊN";
+                    }
+                    Ava = Const.AVA;
+                    //if (Ava != null)
+                    //{
+                    //    //string str = Const._localLink + Const.AVA.Remove(0, 2);
+                    //    p.ava.ImageSource = (ImageSource)new ImageSourceConverter().ConvertFromString(Ava);
+                    //}
+                    p.Show();
+                }
+                else
+                {
+                    p.Close();
+                }
             });
 
             selected = new RelayCommand<StackPanel>((p) => { return true; }, (p) => _UpdateSpn(p));
