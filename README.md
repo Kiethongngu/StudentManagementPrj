@@ -1,6 +1,6 @@
 ﻿<div id="Top"></div>
 
-# QUẢN LÝ BÁN HÀNG QUẦN ÁO
+# QUẢN LÝ HỌC SINH
 Hỗ trợ các cửa hàng quần áo dễ dàng hơn trong việc quản lý.
 
 ## Mục lục
@@ -30,7 +30,7 @@ Hỗ trợ các cửa hàng quần áo dễ dàng hơn trong việc quản lý.
 <div id="Modau"></div>
 
 ## I. Mở đầu
-Kinh tế ngày càng phát triển, đây là thời buổi của công nghệ, của hệ thống số hóa, phần mềm và hệ thống quản lý bùng nổ một cách mạnh mẽ. Tận dụng điều đó, Chúng tôi nhìn thấy rằng thời trang đang là nhu cầu thiết yếu thường ngày và là sự lựa chọn ưu tiên của giới trẻ nói riêng cũng như toàn thể người dân nói chung. Để phục vụ cho việc quản lý bán quần áo một cách hiệu quả và an toàn, đáp ứng được công nghệ của thời đại, nhóm chúng tôi xây dựng lên phần mềm quản lý cửa hàng bán quần áo, sử dụng những công nghệ phù hợp, xây dựng lên giao diện thuận mắt nhằm phục vụ cho người tiêu dùng, cho cộng đồng cùng với bên cạnh là rất nhiều chức năng phục vụ cho việc quản lý sát với thực tiễn.
+Đồ án Quản lý học sinh thực hiện cho môn học Nhập môn Công nghệ Phần mềm - Trường Đại học Công nghệ Thông tin, Đại học Quốc gia Hồ Chí Minh
 
 
 <!-- MÔ TẢ -->
