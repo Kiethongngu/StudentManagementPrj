@@ -5,7 +5,7 @@
                     >
 
     <vm:MainViewModel x:Key="MainVM"></vm:MainViewModel>
-    <!--<vm:LoginViewModel x:Key="LoginVM"></vm:LoginViewModel>-->
+    <vm:LoginViewModel x:Key="LoginVM"></vm:LoginViewModel>
     <vm:HomeViewModel x:Key="HomeVM"></vm:HomeViewModel>
     <vm:ClassViewModel x:Key="ClassVM"></vm:ClassViewModel>
     <vm:ClassListViewModel x:Key="ClassListVM"></vm:ClassListViewModel>

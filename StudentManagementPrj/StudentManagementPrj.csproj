@@ -128,6 +128,7 @@
     <Compile Include="ViewModel\ExportPro5ViewModel.cs" />
     <Compile Include="ViewModel\GradeViewModel.cs" />
     <Compile Include="ViewModel\InputScoreViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ScoreDetailViewModel.cs" />
     <Compile Include="ViewModel\SemesterScoreViewModel.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
