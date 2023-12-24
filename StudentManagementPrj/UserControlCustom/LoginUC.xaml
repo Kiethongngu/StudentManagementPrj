@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="StudentManagementPrj.UserControlCustom.LoginUC"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:StudentManagementPrj.UserControlCustom" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+             mc:Ignorable="d"   
+        d:DesignHeight="720" d:DesignWidth="560"
+             Name="ucLogin"
+             DataContext="{StaticResource LoginVM}">
+
+
+
+    <Grid Background="{StaticResource White}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="0.75*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Foreground="{StaticResource Yale Blue}" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">ĐĂNG NHẬP</TextBlock>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Foreground="{StaticResource Yale Blue}" Opacity="0.7" FontSize="25" FontWeight="Black" HorizontalAlignment="Center" >Xin chào!</TextBlock>
+            <TextBlock Foreground="{StaticResource Yale Blue}" Opacity="0.7" FontSize="25" HorizontalAlignment="Center">Mời đăng nhập để tiếp tục vào ứng dụng.</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Foreground="{StaticResource Yale Blue}" Opacity="0.7" FontSize="25" FontWeight="Bold" Padding="50 0 0 0">Tên đăng nhập</TextBlock>
+            <TextBox 
+                  Margin="50 10"
+                FontSize="23"
+                Text="{Binding UserName}"
+                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                  VerticalAlignment="Center"
+                  materialDesign:HintAssist.Hint="Enter your UserName" 
+                  BorderBrush="{StaticResource Yale Blue}" Opacity="0.75" 
+                />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Left" Foreground="{StaticResource Yale Blue}" Opacity="0.7" FontSize="25" FontWeight="Bold" Margin="50 0 0 0">Mật khẩu</TextBlock>
+                <!--<Button DockPanel.Dock="Right" Background="Transparent" Padding="0" HorizontalAlignment="Right" Margin="0 0 50 0" BorderBrush="Transparent">
+                    <TextBlock Foreground="{StaticResource Yale Blue}" Opacity="0.7" FontSize="25">Quên mật khẩu?</TextBlock>
+                </Button>-->
+            </DockPanel>
+            <PasswordBox
+                Margin="50 10"
+                FontSize="23"
+                x:Name="FloatingPasswordBox"
+                Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"
+                materialDesign:HintAssist.Hint="Enter your Password"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                BorderBrush="{StaticResource Yale Blue}" Opacity="0.75">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PasswordChanged">
+                        <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}" CommandParameter="{Binding ElementName=FloatingPasswordBox}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </PasswordBox>
+        </StackPanel>
+
+        <DockPanel Grid.Row="5" >
+            <Button
+                IsDefault="True"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=ucLogin}"
+                DockPanel.Dock="Top" Background="{StaticResource Yale Blue}" Opacity="0.75" Margin="50 0 50 0" Padding="0" Height="53" VerticalAlignment="Top" BorderBrush="Transparent">
+                <TextBlock Foreground="{StaticResource White}" FontSize="16">ĐĂNG NHẬP</TextBlock>
+            </Button>
+
+            <Button
+                DockPanel.Dock="Bottom"  Background="Transparent" Padding="0" HorizontalAlignment="Right" Margin="0 0 25 0" BorderBrush="Transparent">
+                <TextBlock Foreground="{StaticResource Yale Blue}" Opacity="0.7" FontSize="16" >Giúp đỡ</TextBlock>
+            </Button>
+        </DockPanel>
+    </Grid>
+</UserControl>
