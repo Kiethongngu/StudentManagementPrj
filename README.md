@@ -103,7 +103,7 @@ Giáo viên
 <div id="Nguoihuongdan"></div>
 
 ## IV. Người hướng dẫn
-* Giảng viên: 
+* Giảng viên: Đỗ Thị Thanh Tuyền
 
 
 
