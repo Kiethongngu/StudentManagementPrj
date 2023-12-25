@@ -117,6 +117,9 @@
     <Compile Include="Model\TO1.cs" />
     <Compile Include="Service\NavigationService.cs" />
     <Compile Include="UCViewModel\MemberCardViewModel.cs" />
+    <Compile Include="UserControlCustom\DashBoardNotificationUC.xaml.cs">
+      <DependentUpon>DashBoardNotificationUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlCustom\LoginUC.xaml.cs">
       <DependentUpon>LoginUC.xaml</DependentUpon>
     </Compile>
@@ -236,6 +239,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlCustom\ControlBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlCustom\DashBoardNotificationUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
