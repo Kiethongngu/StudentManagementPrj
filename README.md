@@ -5,7 +5,6 @@
 </p>
 
 
-# QUẢN LÝ HỌC SINH
 
 ## Mục lục
 
