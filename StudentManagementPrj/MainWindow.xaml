@@ -310,6 +310,9 @@
                 <DataTemplate DataType="{x:Type vm:ExportPro5ViewModel}">
                     <viewuc:ExportPro5></viewuc:ExportPro5>
                 </DataTemplate>
+                <DataTemplate DataType="{x:Type vm:AddStudentPro5ViewModel}">
+                    <viewuc:StudentPro5Add></viewuc:StudentPro5Add>
+                </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
 
