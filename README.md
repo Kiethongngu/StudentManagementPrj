@@ -98,6 +98,7 @@ Giáo viên
 * [Tô Thế Kiệt – Trưởng nhóm](https://github.com/kiethongngu)
 * [Đào Anh Tú](https://github.com/anhtu301003)
 * [Vũ Hoàng Nhật Minh](https://github.com/Minguml)
+* [Nguyễn Thùy Trâm](https://github.com/CornCobIT)
 
 <!-- NGƯỜI HƯỚNG DẪN -->
 <div id="Nguoihuongdan"></div>
