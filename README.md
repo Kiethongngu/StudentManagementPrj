@@ -1,8 +1,3 @@
-<p>
-    <img src="https://www.uit.edu.vn/sites/vi/files/banner_uit.png" alt="Alt text">
-</p>
-
-
 
 
 ## Mục lục
